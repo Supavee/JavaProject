@@ -3,33 +3,42 @@
         "nameSubject": "Calculus I",
         "idSubject": "01417111",
         "status": "NotPass",
-        "beforeThisSubject": [ "NULL" ]
+        "credit": "3",
+        "level": "normal",
+        "beforeThisSubject": [ null ]
+
     },
     {
         "nameSubject": "Fund. Programming Concepts",
         "idSubject": "01418112",
         "status": "NotPass",
+        "credit": "3",
+        "level": "hard",
         "beforeThisSubject": [ "01418114" ]
     },
     {
         "nameSubject": "Intro. to Computer Science",
         "idSubject": "01418114",
         "status": "NotPass",
-        "beforeThisSubject": [ "NULL" ]
+        "credit": "2",
+        "level": "easy",
+        "beforeThisSubject": [ null ]
     },
     {
         "nameSubject": "Digital Computer Logic",
         "idSubject": "01418131",
         "status": "NotPass",
-
-        "beforeThisSubject": [ "NULL" ]
+        "credit": "3",
+        "level": "easy",
+        "beforeThisSubject": [ null ]
     },
     {
         "nameSubject": "Knowledge of the Land",
         "idSubject": "01999111",
         "status": "NotPass",
-
-        "beforeThisSubject": [ "NULL" ]
+        "credit": "2",
+        "level": "easy",
+        "beforeThisSubject": [ null ]
     },
 
 
@@ -39,19 +48,26 @@
         "nameSubject": "Calculus II",
         "idSubject": "01417112",
         "status": "NotPass",
+        "credit": "3",
+        "level": "normal",
         "beforeThisSubject": [ "01417111" ]
     },
     {
         "nameSubject": "Computer Programming",
         "idSubject": "01418113",
         "status": "NotPass",
+        "credit": "3",
+        "level": "hard",
         "beforeThisSubject": [ "01418112" ]
     },
     {
         "nameSubject": "Fundamentals of Computing",
         "idSubject": "01418132",
         "status": "NotPass",
-        "beforeThisSubject": [ "NULL" ]
+        "credit": "4",
+        "level": "normal",
+        "beforeThisSubject": [ null ]
+
     },
 
 
@@ -62,25 +78,33 @@
         "nameSubject": "Basic Linear Algebra",
         "idSubject": "01417322",
         "status": "NotPass",
+        "credit": "3",
+        "level": "hard",
         "beforeThisSubject": [ "01417112" ]
     },
     {
         "nameSubject": "Software Construction",
         "idSubject": "01418211",
         "status": "NotPass",
+        "credit": "3",
+        "level": "hard",
         "beforeThisSubject": [ "01418113" ]
     },
     {
         "nameSubject": "Data Structures",
         "idSubject": "01418231",
         "status": "NotPass",
+        "credit": "3",
+        "level": "hard",
         "beforeThisSubject": [ "01418113" ]
     },
     {
         "nameSubject": "Principles of Statistics",
         "idSubject": "01422111",
         "status": "NotPass",
-        "beforeThisSubject": [ "NULL" ]
+        "credit": "3",
+        "level": "normal",
+        "beforeThisSubject": [ null ]
     },
 
 
@@ -91,54 +115,61 @@
         "nameSubject": "Fundamental of Database Systems",
         "idSubject": "01418221",
         "status": "NotPass",
-
+        "credit": "3",
+        "level": "normal",
         "beforeThisSubject": [ "01418113" ]
-    },
-    {
-        "nameSubject": "Assembly Language and Computer Architecture",
-        "idSubject": "01418233",
-        "status": "NotPass",
-
-        "beforeThisSubject": [ "01418113" ,"01418131"]
-
     },
     {
         "nameSubject": "Algorithms Design & Analysis",
         "idSubject": "01418232",
         "status": "NotPass",
-
+        "credit": "3",
+        "level": "hard",
         "beforeThisSubject": [ "01418231","01418132" ]
     },
-
-
-
-
     {
-        "nameSubject": "Operating Systems",
-        "idSubject": "01418331",
+        "nameSubject": "Assembly Language and Computer Architecture",
+        "idSubject": "01418233",
         "status": "NotPass",
+        "credit": "4",
+        "level": "hard",
+        "beforeThisSubject": [ "01418113" ,"01418131"]
 
-        "beforeThisSubject": [ "01418233" ]
     },
+
+
+
+
     {
         "nameSubject": "System Analysis & Design",
         "idSubject": "01418321",
         "status": "NotPass",
-
+        "credit": "3",
+        "level": "hard",
         "beforeThisSubject": [ "01418221","01418211" ]
+    },
+    {
+        "nameSubject": "Operating Systems",
+        "idSubject": "01418331",
+        "status": "NotPass",
+        "credit": "4",
+        "level": "hard",
+        "beforeThisSubject": [ "01418233" ]
     },
     {
         "nameSubject": "Intellectual Prop. & Profess. Ethics",
         "idSubject": "01418341",
         "status": "NotPass",
-
-        "beforeThisSubject": ["NULL"]
+        "credit": "3",
+        "level": "normal",
+        "beforeThisSubject": [ null ]
     },
     {
         "nameSubject": "Seminar",
         "idSubject": "01418497",
         "status": "NotPass",
-
+        "credit": "1",
+        "level": "hard",
         "beforeThisSubject": [ "01418221" ]
     },
 
@@ -150,35 +181,60 @@
         "nameSubject": "Information System Security",
         "idSubject": "01418332",
         "status": "NotPass",
-
+        "credit": "3",
+        "level": "hard",
         "beforeThisSubject": [ "01418331" ]
     },
     {
         "nameSubject": "Automata Theory",
         "idSubject": "01418333",
         "status": "NotPass",
-
+        "credit": "2",
+        "level": "hard",
         "beforeThisSubject": [ "01418132" ]
     },
     {
-        "nameSubject": "Computer Communications & Protocols",
+        "nameSubject": "Compiler Techniques",
+        "idSubject": "01418334",
+        "status": "NotPass",
+        "credit": "2",
+        "level": "hard",
+        "beforeThisSubject": [ "01418333" ]
+    },
+    {
+        "nameSubject": "Principles in CCs & Cloud Computing",
         "idSubject": "01418351",
         "status": "NotPass",
-
+        "credit": "3",
+        "level": "hard",
         "beforeThisSubject": [ "01418331" ]
     },
     {
         "nameSubject": "Cooperative Education Preparation",
         "idSubject": "01418390",
         "status": "NotPass",
-
+        "credit": "1",
+        "level": "normal",
         "beforeThisSubject": [ "01418321" ]
     },
-    {
-        "nameSubject": "Compiler Techniques",
-        "idSubject": "01418334",
-        "status": "NotPass",
 
-        "beforeThisSubject": [ "01418333" ]
+
+    {
+        "nameSubject": "Co-op Education",
+        "idSubject": "01418490",
+        "status": "NotPass",
+        "credit": "6",
+        "level": "hard",
+        "beforeThisSubject": [ "01418390" ]
+    },
+
+
+    {
+        "nameSubject": "CS Project",
+        "idSubject": "01418499",
+        "status": "NotPass",
+        "credit": "3",
+        "level": "hard",
+        "beforeThisSubject": [ null ]
     }
 ]
