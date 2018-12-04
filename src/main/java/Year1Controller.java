@@ -58,6 +58,7 @@ public class Year1Controller implements Initializable {
             }
 
         }
+        
         subjectList.getItems().addAll(list);
         subjectList.setCellFactory(param -> new ListCell<Subject>(){
             protected void updateItem(Subject item, boolean empty) {
