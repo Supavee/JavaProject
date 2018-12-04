@@ -33,6 +33,7 @@ public class Year4Controller implements Initializable {
     @FXML private Label year4;
     @FXML private TextArea screen;
     @FXML private Button goBack;
+    @FXML private Button checkYear4;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -103,6 +104,14 @@ public class Year4Controller implements Initializable {
     public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) goBack.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("chooseyear.fxml"));
+        stage.setTitle("Regis");
+        stage.setScene(new Scene(root,600,400));
+        stage.show();
+    }
+
+    public void changetoPageCheck (ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) checkYear4.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("checkYear4.fxml"));
         stage.setTitle("Regis");
         stage.setScene(new Scene(root,600,400));
         stage.show();

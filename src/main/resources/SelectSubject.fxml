@@ -8,16 +8,15 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SelectSubjectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SelectSubjectController">
    <children>
-      <GridPane layoutX="32.0" layoutY="64.0" prefHeight="372.0" prefWidth="936.0">
+      <GridPane layoutX="22.0" layoutY="42.0" prefHeight="372.0" prefWidth="670.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="250.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="250.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="250.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="250.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="197.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="138.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="115.0" minHeight="2.0" prefHeight="42.0" vgrow="SOMETIMES" />
@@ -25,70 +24,58 @@
           <RowConstraints maxHeight="204.0" minHeight="10.0" prefHeight="203.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="YEAR 1">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></Label>
-            <Label text="YEAR 2" GridPane.columnIndex="1">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></Label>
-            <Label text="YEAR 3" GridPane.columnIndex="2">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></Label>
-            <Label text="YEAR 4" GridPane.columnIndex="3">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></Label>
+            <Label text="YEAR 1" />
+            <Label text="YEAR 2" GridPane.columnIndex="1" />
+            <Label text="YEAR 3" GridPane.columnIndex="2" />
+            <Label text="YEAR 4" GridPane.columnIndex="3" />
             <VBox prefHeight="145.0" prefWidth="280.0" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 1" />
-                  <CheckBox fx:id="cal" mnemonicParsing="false" onAction="#checkSubject" prefHeight="23.0" prefWidth="255.0" text="Calculus I" />
-                  <CheckBox fx:id="funPro" mnemonicParsing="false" onAction="#checkSubject" prefHeight="23.0" prefWidth="235.0" text="Fund. Prog.Concepts" />
-                  <CheckBox fx:id="intro" mnemonicParsing="false" onAction="#checkSubject" prefHeight="23.0" prefWidth="262.0" text="Intro. to Com-Sci" />
-                  <CheckBox fx:id="digi" mnemonicParsing="false" onAction="#checkSubject" prefHeight="23.0" prefWidth="253.0" text="Digital Computer Logic" />
-                  <CheckBox fx:id="knowl" mnemonicParsing="false" onAction="#checkSubject" prefHeight="23.0" prefWidth="297.0" text="Knowledge of the Land" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="72.0" text="Calculus I" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="161.0" text="Fund. Prog.Concepts" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="165.0" text="Intro. to Com-Sci" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="167.0" text="Digital Computer Logic" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="162.0" text="Knowledge of the Land" />
                </children>
             </VBox>
-            <VBox prefHeight="170.0" prefWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox prefHeight="145.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 1" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="228.0" text="Basic Linear Algebra" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="237.0" text="Software Construction" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="226.0" text="Data Structures" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="255.0" text="Principles of Statistics" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="158.0" text="Basic Linear Algebra" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="161.0" text="Software Construction" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="167.0" text="Data Structures" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="169.0" text="Principles of Statistics" />
                </children>
             </VBox>
             <VBox prefHeight="145.0" prefWidth="280.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 1" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="298.0" text="Operating Systems" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="299.0" text="System Analysis &amp; Design" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="234.0" text="Intellectual Prop. &amp; Profess. Ethics" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="265.0" text="Seminar" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="149.0" text="Operating Systems" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="161.0" text="System Analysis &amp; Design" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="172.0" text="Intellectual Prop. &amp; Profess. Ethics" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="73.0" text="Seminar" />
                </children>
             </VBox>
-            <VBox prefHeight="170.0" prefWidth="326.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <VBox prefHeight="145.0" prefWidth="280.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 1" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="250.0" text="Co-op. Education" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="168.0" text="Co-op. Education" />
                </children>
             </VBox>
             <VBox prefHeight="145.0" prefWidth="280.0" GridPane.rowIndex="2">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 2" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="266.0" text="Calculus II" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="241.0" text="Computer Programming" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="268.0" text="Fund. of Computing" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="94.0" text="Calculus II" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="161.0" text="Computer Programming" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="178.0" text="Fund. of Computing" />
                </children>
             </VBox>
             <VBox prefHeight="145.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 2" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="230.0" text="Fund. of Database Systems" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="234.0" text="Assembly Lang. and Comp. Arch." />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="260.0" text="Algorithms Design &amp; Analysis" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="172.0" text="Fund. of Database Systems" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="161.0" text="Assembly Lang. and Comp. Arch." />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="198.0" text="Algorithms Design &amp; Analysis" />
                </children>
             </VBox>
             <VBox prefHeight="145.0" prefWidth="280.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -96,12 +83,12 @@
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 2" />
                   <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="186.0" text="Inform. System Security" />
                   <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="161.0" text="Automata Theory" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="289.0" text="Comp. Commu. &amp; Protocols" />
+                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="190.0" text="Comp. Commu. &amp; Protocols" />
                   <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="171.0" text="Co-op. Edu Preparation" />
                   <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="185.0" text="Compiler Techniques" />
                </children>
             </VBox>
-            <VBox prefHeight="231.0" prefWidth="415.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <VBox prefHeight="190.0" prefWidth="171.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 2" />
                   <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="139.0" text="CS Project" />
@@ -109,11 +96,8 @@
             </VBox>
          </children>
       </GridPane>
-      <Label layoutX="27.0" layoutY="14.0" prefHeight="35.0" prefWidth="468.0" text="Select subject that pass">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font></Label>
-      <Button fx:id="save" layoutX="733.0" layoutY="446.0" mnemonicParsing="false" onAction="#checkSubject" prefHeight="25.0" prefWidth="105.0" text="Saved" />
-      <Button fx:id="goBack" layoutX="863.0" layoutY="446.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="25.0" prefWidth="105.0" text="Back" />
+      <Label layoutX="27.0" layoutY="14.0" prefHeight="17.0" prefWidth="246.0" text="Select subject that pass" />
+      <Button layoutX="180.0" layoutY="430.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Saved" />
+      <Button layoutX="413.0" layoutY="430.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="25.0" prefWidth="105.0" text="Back" />
    </children>
 </AnchorPane>
