@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Year4Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Year4Controller">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,7 +25,7 @@
                <content>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <ListView fx:id="subjectList" prefHeight="322.0" prefWidth="223.0" />
+                        <ListView fx:id="subjectList" onMouseClicked="#displaySelected" prefHeight="322.0" prefWidth="223.0" />
                      </children>
                   </VBox>
                </content>
@@ -34,7 +34,7 @@
                <content>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <ListView fx:id="subjectList2" prefHeight="322.0" prefWidth="223.0" />
+                        <ListView fx:id="subjectList2" onMouseClicked="#displaySelected2" prefHeight="322.0" prefWidth="223.0" />
                      </children>
                   </VBox>
                </content>
@@ -48,7 +48,7 @@
                   <Font name="Calisto MT" size="29.0" />
                </font>
             </Label>
-            <TextArea fx:id="screen" layoutX="45.0" layoutY="68.0" prefHeight="259.0" prefWidth="264.0" />
+            <TextArea fx:id="screen" layoutX="45.0" layoutY="68.0" onDragDetected="#displaySelected" prefHeight="259.0" prefWidth="264.0" />
             <Button fx:id="goBack" layoutX="136.0" layoutY="356.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="34.0" prefWidth="82.0" text="Back" />
          </children>
       </Pane>

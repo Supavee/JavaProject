@@ -6,14 +6,17 @@ public class Subject {
     private String nameSubject;
     private String idSubject;
     private String status;
+    private String credit;
+    private String level;
     private ArrayList<String> beforeThisSubject = new ArrayList();
 
-
-    public Subject(String nameSubject, String idSubject, String status, ArrayList<String> beforeThisSubject) {
+    public Subject(String nameSubject, String idSubject, String status, String credit, String level,
+                   ArrayList<String> beforeThisSubject) {
         this.nameSubject = nameSubject;
         this.idSubject = idSubject;
         this.status = status;
-
+        this.credit = credit;
+        this.level = level;
         this.beforeThisSubject = beforeThisSubject;
     }
 
@@ -29,6 +32,13 @@ public class Subject {
         return status;
     }
 
+    public String getCredit() {
+        return credit;
+    }
+
+    public String getLevel() {
+        return level;
+    }
 
     public ArrayList<String> getBeforeThisSubject() {
         return beforeThisSubject;
@@ -46,6 +56,14 @@ public class Subject {
         this.status = status;
     }
 
+    public void setCredit(String credit) {
+        this.credit = credit;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
     public void setBeforeThisSubject(ArrayList<String> beforeThisSubject) {
         this.beforeThisSubject = beforeThisSubject;
     }
@@ -53,6 +71,6 @@ public class Subject {
     public String toString(){
         return "NAME : " + getNameSubject() + "\n" +
                 "ID : " + getIdSubject() + "\n" +
-                "STATUS : " + getStatus() + "\n";
+                "CREDIT : " + getCredit() + "\n";
     }
 }
