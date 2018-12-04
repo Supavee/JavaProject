@@ -9,21 +9,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SelectSubjectController {
-    @FXML private Button back;
+public class checkYear2Controller {
+    @FXML
+    private Button back;
     @FXML private CheckBox calculus1;
     @FXML private CheckBox FunPro;
     @FXML private CheckBox IntroCom;
     @FXML private CheckBox Digital;
     @FXML private CheckBox Knowledge;
 
-    public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
+    public void changetoPageYear2 (ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) back.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("chooseyear.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("year2.fxml"));
         stage.setTitle("Regis");
         stage.setScene(new Scene(root,600,400));
         stage.show();
     }
-
-
 }
