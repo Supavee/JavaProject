@@ -1,16 +1,16 @@
 package Program;
 
-import java.util.ArrayList;
+import Program.Subject;
 
-public class Student extends Subject{
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class Student {
     private String studentName;
     private String studentID;
     private ArrayList<Subject> studentSubjects = new ArrayList();
 
-    public Student(String nameSubject, String idSubject, String status, String credit,
-                   String level, ArrayList<String> beforeThisSubject, String studentName,
-                   String studentID, ArrayList<Subject> studentSubjects) {
-        super(nameSubject, idSubject, status, credit, level, beforeThisSubject);
+    public Student(String studentName, String studentID, ArrayList<Subject> studentSubjects) {
         this.studentName = studentName;
         this.studentID = studentID;
         this.studentSubjects = studentSubjects;
@@ -24,11 +24,7 @@ public class Student extends Subject{
         return studentID;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
-    }
+    
 
-    public void setStudentID(String studentID) {
-        this.studentID = studentID;
-    }
+
 }
