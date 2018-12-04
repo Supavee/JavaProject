@@ -24,16 +24,15 @@ public class Year1Controller implements Initializable {
     ObservableList info = FXCollections.observableArrayList();
     ObservableList info2 = FXCollections.observableArrayList();
 
+
     private ArrayList<Subject> subjects;
     private FileJSONReader fileJSONReader ;
-
     @FXML public ListView<Subject> subjectList;
     @FXML private ListView<Subject> subjectList2;
     @FXML private Label year1;
     @FXML private TextArea screen;
     @FXML private Button goBack;
-    @FXML private Button checkSubject;
-
+    @FXML private Label level;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -89,16 +88,34 @@ public class Year1Controller implements Initializable {
     @FXML
     public void displaySelected(MouseEvent event){
         Subject selectSubject = subjectList.getSelectionModel().getSelectedItem();
+        if (selectSubject.getLevel().equals("hard")) {
+            level.setStyle("-fx-border-color:black; -fx-background-color: red;");
+            level.setText("HARD");
+        } else if (selectSubject.getLevel().equals("normal")) {
+            level.setStyle("-fx-border-color:black; -fx-background-color: blue;");
+            level.setText("NORMAL");
+        } else {
+            level.setStyle("-fx-border-color:black; -fx-background-color: green;");
+            level.setText("EASY");
+        }
         screen.setText(selectSubject.toString());
         System.out.println(selectSubject.toString());
-//        for (int i=0; i<8; i++) {
-//
-//        }
+
     }
 
     @FXML
     public void displaySelected2(MouseEvent event){
         Subject selectSubject2 = subjectList2.getSelectionModel().getSelectedItem();
+        if (selectSubject2.getLevel().equals("hard")) {
+            level.setStyle("-fx-border-color:black; -fx-background-color: red;");
+            level.setText("HARD");
+        } else if (selectSubject2.getLevel().equals("normal")) {
+            level.setStyle("-fx-border-color:black; -fx-background-color: blue;");
+            level.setText("NORMAL");
+        } else {
+            level.setStyle("-fx-border-color:black; -fx-background-color: green;");
+            level.setText("EASY");
+        }
         screen.setText(selectSubject2.toString());
         System.out.println(selectSubject2.toString());
     }
@@ -106,14 +123,6 @@ public class Year1Controller implements Initializable {
     public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) goBack.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("chooseyear.fxml"));
-        stage.setTitle("Regis");
-        stage.setScene(new Scene(root,600,400));
-        stage.show();
-    }
-
-    public void changetoPageCheck (ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) checkSubject.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("checkYear1.fxml"));
         stage.setTitle("Regis");
         stage.setScene(new Scene(root,600,400));
         stage.show();
