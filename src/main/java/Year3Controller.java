@@ -33,6 +33,7 @@ public class Year3Controller implements Initializable {
     @FXML private Label year3;
     @FXML private TextArea screen;
     @FXML private Button goBack;
+    @FXML private Button checkYear3;
 
 
     private void loadData() {
@@ -61,6 +62,14 @@ public class Year3Controller implements Initializable {
     public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) goBack.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("chooseyear.fxml"));
+        stage.setTitle("Regis");
+        stage.setScene(new Scene(root,600,400));
+        stage.show();
+    }
+
+    public void changetoPageCheck (ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) checkYear3.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("checkYear3.fxml"));
         stage.setTitle("Regis");
         stage.setScene(new Scene(root,600,400));
         stage.show();

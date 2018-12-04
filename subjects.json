@@ -132,7 +132,7 @@
         "idSubject": "01418341",
         "status": "NotPass",
 
-        "beforeThisSubject": [ "NULL" ]
+        "beforeThisSubject": ["NULL"]
     },
     {
         "nameSubject": "Seminar",

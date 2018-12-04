@@ -26,11 +26,13 @@ public class Year1Controller implements Initializable {
 
     private ArrayList<Subject> subjects;
     private FileJSONReader fileJSONReader ;
+
     @FXML public ListView<Subject> subjectList;
     @FXML private ListView<Subject> subjectList2;
     @FXML private Label year1;
     @FXML private TextArea screen;
     @FXML private Button goBack;
+    @FXML private Button checkSubject;
 
 
     @Override
@@ -103,6 +105,14 @@ public class Year1Controller implements Initializable {
     public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) goBack.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("chooseyear.fxml"));
+        stage.setTitle("Regis");
+        stage.setScene(new Scene(root,600,400));
+        stage.show();
+    }
+
+    public void changetoPageCheck (ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) checkSubject.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("checkYear1.fxml"));
         stage.setTitle("Regis");
         stage.setScene(new Scene(root,600,400));
         stage.show();

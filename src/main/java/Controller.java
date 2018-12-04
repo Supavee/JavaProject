@@ -58,7 +58,7 @@ public class Controller {
                     try {
                         Parent root = FXMLLoader.load(getClass().getResource("year"+ newStage +".fxml"));
                         stage.setTitle("Regis");
-                        stage.setScene(new Scene(root, 600, 450));
+                        stage.setScene(new Scene(root, 600, 400));
                         stage.show();
                     } catch (IOException e) {
                         e.printStackTrace();
