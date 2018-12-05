@@ -32,5 +32,6 @@
       <TextField fx:id="id" layoutX="29.0" layoutY="100.0" promptText="Enter ID" />
       <TextArea fx:id="stuSub" layoutX="321.0" layoutY="52.0" onDragDetected="#setSubjectArea" prefHeight="335.0" prefWidth="265.0" />
       <Button fx:id="saveNameID" layoutX="150.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleOnAction" text="Sign In" />
+      <Button fx:id="register" layoutX="29.0" layoutY="160.0" mnemonicParsing="false" onAction="#changetoSelectSubject" text="Register" />
    </children>
 </AnchorPane>

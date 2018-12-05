@@ -21,6 +21,7 @@ public class Controller {
     @FXML public TextField id;
     @FXML public Button saveNameID;
     @FXML public TextArea stuSub;
+    @FXML public Button register;
     private StudentSubjects studentSubjects;
 
 
@@ -69,6 +70,14 @@ public class Controller {
 
     }
 
+    @FXML public void changetoSelectSubject() throws IOException {
+        Stage stage = (Stage) register.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("SelectSubject.fxml"));
+        stage.setTitle("Regis");
+        stage.setScene(new Scene(root,1000,500));
+        stage.show();
+    }
+
     @FXML public void handleOnAction(ActionEvent actionEvent) {
         String nameStu = name.getText();
         String IDStu = id.getId();
@@ -78,7 +87,6 @@ public class Controller {
         studentSubjects.setStudentSubjects(new ArrayList<String>());
         name.setText("");
         id.setText("");
-
     }
 
     @FXML public void setSubjectArea(MouseEvent mouseEvent) {
