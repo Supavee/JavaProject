@@ -32,10 +32,10 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" prefHeight="30.0" prefWidth="189.0" text="Basic Linear Algebra" />
-                        <CheckBox mnemonicParsing="false" prefHeight="30.0" prefWidth="192.0" text="Software Construction" />
-                        <CheckBox mnemonicParsing="false" prefHeight="30.0" prefWidth="190.0" text="Data Structures" />
-                        <CheckBox mnemonicParsing="false" prefHeight="30.0" prefWidth="188.0" text="Principles of Statistics" />
+                        <CheckBox fx:id="basicLinear" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="189.0" text="Basic Linear Algebra" />
+                        <CheckBox fx:id="software" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="192.0" text="Software Construction" />
+                        <CheckBox fx:id="dataStruct" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="190.0" text="Data Structures" />
+                        <CheckBox fx:id="statistic" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="188.0" text="Principles of Statistics" />
                      </children>
                   </VBox>
                </children>
@@ -47,14 +47,14 @@
             </Label>
             <VBox prefHeight="201.0" prefWidth="154.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <CheckBox mnemonicParsing="false" prefHeight="30.0" prefWidth="189.0" text="Fund. of Database Systems" />
-                  <CheckBox mnemonicParsing="false" prefHeight="30.0" prefWidth="214.0" text="Assembly Lang. and Comp. Arch." />
-                  <CheckBox mnemonicParsing="false" prefHeight="30.0" prefWidth="190.0" text="Algorithms Design &amp; Analysis" />
+                  <CheckBox fx:id="database" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="189.0" text="Fund. of Database Systems" />
+                  <CheckBox fx:id="algorithm" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="190.0" text="Algorithms Design &amp; Analysis" />
+                  <CheckBox fx:id="assembly" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="214.0" text="Assembly Lang. and Comp. Arch." />
                </children>
             </VBox>
          </children>
       </GridPane>
       <Button fx:id="back" layoutX="383.0" layoutY="305.0" mnemonicParsing="false" onAction="#changetoPageYear2" prefHeight="25.0" prefWidth="105.0" text="Back" />
-      <Button layoutX="90.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Saved" />
+      <Button fx:id="save" layoutX="90.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#saveOnAction" prefHeight="25.0" prefWidth="105.0" text="Saved" />
    </children>
 </AnchorPane>

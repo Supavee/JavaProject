@@ -130,7 +130,7 @@ public class Year2Controller implements Initializable {
 
     public void changetoPageCheck (ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) checkYear2.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("checkYear1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("checkYear2.fxml"));
         stage.setTitle("Regis");
         stage.setScene(new Scene(root,600,400));
         stage.show();
