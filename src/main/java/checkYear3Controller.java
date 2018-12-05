@@ -67,43 +67,43 @@ public class checkYear3Controller {
             system = "";
         }
         if (intellectual.isSelected()) {
-            intell = "Fund. Programming Concepts";
+            intell = "Intellectual Prop. & Profess. Ethics";
         }
         else if (!intellectual.isSelected()) {
             intell = "";
         }
         if (seminar.isSelected()) {
-            semi = "Digital Computer Logic";
+            semi = "Seminar";
         }
         else if (!seminar.isSelected()) {
             semi = "";
         }
         if (inforSystem.isSelected()) {
-            info = "Knowledge of the Land";
+            info = "Information System Security";
         }
         else if (!inforSystem.isSelected()) {
             info = "";
         }
         if (automata.isSelected()) {
-            auto = "Calculus II";
+            auto = "Automata Theory";
         }
         else if (!automata.isSelected()) {
             auto = "";
         }
         if (compliertech.isSelected()) {
-            complier = "Computer Programming";
+            complier = "Compiler Techniques";
         }
         else if (!compliertech.isSelected()) {
             complier = "";
         }
         if (prinInCS.isSelected()) {
-            princs = "Fundamentals of Computing";
+            princs = "Principles in CCs & Cloud Computing";
         }
         else if (!prinInCS.isSelected()) {
             princs = "";
         }
         if (coOpEduPre.isSelected()) {
-            cooppre = "Fundamentals of Computing";
+            cooppre = "Cooperative Education Preparation";
         }
         else if (!coOpEduPre.isSelected()) {
             cooppre = "";

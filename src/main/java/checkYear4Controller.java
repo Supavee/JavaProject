@@ -44,12 +44,12 @@ public class checkYear4Controller {
 
     public void checkYear1() {
         if (coOpEdu.isSelected()) {
-            coOp = "Operating Systems";
+            coOp = "Co-op Education";
         } else if (!coOpEdu.isSelected()) {
             coOp = "";
         }
         if (csProject.isSelected()) {
-            csPro = "System Analysis & Design";
+            csPro = "CS Project";
         } else if (!csProject.isSelected()) {
             csPro = "";
         }
