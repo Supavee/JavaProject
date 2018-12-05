@@ -54,8 +54,7 @@ public class checkYear1Controller {
     }
     public void checkSem1() {
         if (calculus1.isSelected()) {
-            cal = "calPass";
-            status.get(0).replace("NotPass","calPass");
+            cal = "Calculus I";
             System.out.println(status);
 
         }
@@ -63,43 +62,43 @@ public class checkYear1Controller {
             cal = "";
         }
         if (IntroCom.isSelected()) {
-            intro = " introPass";
+            intro = "Intro. to Computer Science";
         }
         else if (!IntroCom.isSelected()) {
             intro = "";
         }
         if (FunPro.isSelected()) {
-            funp = "funProPass";
+            funp = "Fund. Programming Concepts";
         }
         else if (!FunPro.isSelected()) {
             funp = "";
         }
         if (Digital.isSelected()) {
-            digi = "digiPass";
+            digi = "Digital Computer Logic";
         }
         else if (!Digital.isSelected()) {
             digi = "";
         }
         if (Knowledge.isSelected()) {
-            know = "knowPass";
+            know = "Knowledge of the Land";
         }
         else if (!Knowledge.isSelected()) {
             know = "";
         }
         if (calculus2.isSelected()) {
-            cal2 = "cal2Pass";
+            cal2 = "Calculus II";
         }
         else if (!calculus2.isSelected()) {
             cal2 = "";
         }
         if (comPro.isSelected()) {
-            comp = "comProPass";
+            comp = "Computer Programming";
         }
         else if (!comPro.isSelected()) {
             comp = "";
         }
         if (Funcom.isSelected()) {
-            func = "knowPass";
+            func = "Fundamentals of Computing";
         }
         else if (!Funcom.isSelected()) {
             func = "";
@@ -120,16 +119,19 @@ public class checkYear1Controller {
             finalSub.add(studentSubject.get(i));
             System.out.println(finalSub);
         }
-        if (finalSub.get(2).equals("funProPass") && finalSub.get(1).equals("")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText(null);
-            alert.setContentText("If you passed FunPro, you have to pass IntroCom before.");
-
-            alert.showAndWait();
+        if (finalSub.get(2).equals("Fund. Programming Concepts") && finalSub.get(1).equals("")) {
+            String s = "If you passed Fund. Programming Concepts, you have to pass Intro. to Computer Science before.";
+            Alert(s);
         }
-        if (finalSub.get(5).equals("calPass")) {
-
+        if (finalSub.get(5).equals("Calculus II") && finalSub.get(0).equals("")) {
+            String s = "If you passed Calculus II, you have to pass Calculus I before.";
+            Alert(s);
+        }
+        if (finalSub.get(6).equals("Computer Programming") && finalSub.get(2).equals("") ||
+                finalSub.get(6).equals("Computer Programming") &&finalSub.get(1).equals("") ||
+                finalSub.get(6).equals("Computer Programming") && finalSub.get(2).equals("") && finalSub.get(1).equals("")) {
+            String s = "If you passed Computer Programming, you have to pass Fund. Programming Concepts and Intro. to Computer Science before.";
+            Alert(s);
         }
     }
 
@@ -137,17 +139,9 @@ public class checkYear1Controller {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText(null);
-        alert.setContentText("You must select" + sub + " the data first!");
+        alert.setContentText(sub);
 
         alert.showAndWait();
-    }
-
-    public void changetoPageYear3 (ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) back.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("year3.fxml"));
-        stage.setTitle("Regis");
-        stage.setScene(new Scene(root,600,400));
-        stage.show();
     }
 
     public void changetoPageYear1 (ActionEvent actionEvent) throws IOException {

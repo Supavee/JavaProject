@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,13 +17,20 @@
             <Image url="@openpage.jpg" />
          </image>
       </ImageView>
-      <ChoiceBox fx:id="choiceBox" layoutX="69.0" layoutY="64.0" onDragDetected="#initialize" prefWidth="150.0" />
-      <Button fx:id="submitButton" layoutX="259.0" layoutY="64.0" mnemonicParsing="false" onAction="#initialize" text="submit" />
-      <Label layoutX="69.0" layoutY="32.0" text="Choose year to check subjects." />
-      <Label layoutX="406.0" layoutY="14.0" text="Regis Information">
+      <ChoiceBox fx:id="choiceBox" layoutX="29.0" layoutY="355.0" onDragDetected="#initialize" prefWidth="150.0" />
+      <Button fx:id="submitButton" layoutX="225.0" layoutY="355.0" mnemonicParsing="false" onAction="#initialize" text="submit" />
+      <Label layoutX="29.0" layoutY="322.0" style="-fx-background-color: #765281;" text="Choose year to check subjects." textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="410.0" layoutY="14.0" text="Regis Information">
          <font>
             <Font name="Mongolian Baiti" size="24.0" />
          </font>
       </Label>
+      <TextField fx:id="name" layoutX="29.0" layoutY="52.0" promptText="Enter Name" />
+      <TextField fx:id="id" layoutX="29.0" layoutY="100.0" promptText="Enter ID" />
+      <TextArea fx:id="stuSub" layoutX="321.0" layoutY="52.0" onDragDetected="#setSubjectArea" prefHeight="335.0" prefWidth="265.0" />
+      <Button fx:id="saveNameID" layoutX="150.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleOnAction" text="Sign In" />
    </children>
 </AnchorPane>
