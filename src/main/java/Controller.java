@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class Controller {
@@ -20,8 +21,8 @@ public class Controller {
     @FXML public TextField id;
     @FXML public Button saveNameID;
     @FXML public TextArea stuSub;
-
     private StudentSubjects studentSubjects;
+
 
     public void initialize() {
         choiceBox.getItems().add("YEAR 1");
@@ -71,9 +72,10 @@ public class Controller {
     @FXML public void handleOnAction(ActionEvent actionEvent) {
         String nameStu = name.getText();
         String IDStu = id.getId();
-
-        studentSubjects = new StudentSubjects(nameStu, IDStu, null);
-
+        studentSubjects = StudentSubjects.getInstance();
+        studentSubjects.setStudentID(IDStu);
+        studentSubjects.setStudentName(nameStu);
+        studentSubjects.setStudentSubjects(new ArrayList<String>());
         name.setText("");
         id.setText("");
 
@@ -83,56 +85,11 @@ public class Controller {
         stuSub.setText(studentSubjects.toString());
     }
 
+    public StudentSubjects getStudentSubjects() {
+        return studentSubjects;
+    }
 
-//    public void changePage (ActionEvent actionEvent) throws IOException{
-//        String newStage = "";
-//        if (choiceBox.getValue().equals("YEAR 1")){
-//            newStage = "1";
-//        } if (choiceBox.equals("YEAR 2")) {
-//            newStage = "2";
-//        } if (choiceBox.equals("YEAR 3")) {
-//            newStage = "3";
-//        } if (choiceBox.equals("YEAR 4")) {
-//            newStage = "4";
-//        }
-//        Stage stage = (Stage) submitButton.getScene().getWindow();
-//        Parent root = FXMLLoader.load(getClass().getResource("year" + newStage + ".fxml"));
-//        stage.setTitle("Regis");
-//        stage.setScene(new Scene(root,600,450));
-//        stage.show();
-//    }
-//
-//    public void changePageYear1 (ActionEvent actionEvent) throws IOException{
-//        Stage stage = (Stage) buttonYear1.getScene().getWindow();
-//        Parent root = FXMLLoader.load(getClass().getResource("year1.fxml"));
-//        stage.setTitle("Regis");
-//        stage.setScene(new Scene(root,600,450));
-//        stage.show();
-//    }
-//
-//    public void changePageYear2 (ActionEvent actionEvent) throws IOException{
-//        Stage stage = (Stage) buttonYear2.getScene().getWindow();
-//        Parent root = FXMLLoader.load(getClass().getResource("year2.fxml"));
-//        stage.setTitle("Regis");
-//        stage.setScene(new Scene(root,600,450));
-//        stage.show();
-//    }
-//
-//    public void changePageYear3 (ActionEvent actionEvent) throws IOException{
-//        Stage stage = (Stage) buttonYear3.getScene().getWindow();
-//        Parent root = FXMLLoader.load(getClass().getResource("year3.fxml"));
-//        stage.setTitle("Regis");
-//        stage.setScene(new Scene(root,600,450));
-//        stage.show();
-//    }
-//
-//    public void changePageYear4 (ActionEvent actionEvent) throws IOException{
-//        Stage stage = (Stage) buttonYear4.getScene().getWindow();
-//        Parent root = FXMLLoader.load(getClass().getResource("year4.fxml"));
-//        stage.setTitle("Regis");
-//        stage.setScene(new Scene(root,600,450));
-//        stage.show();
-//    }
-
-
+    public void setStudentSubjects(StudentSubjects studentSubjects) {
+        this.studentSubjects = studentSubjects;
+    }
 }

@@ -32,11 +32,11 @@ public class checkYear1Controller {
     private FileJSONReader fileJSONReader;
     private StudentSubjects studentSubjects;
 
-    private ArrayList<String> studentSubject = new ArrayList<>();
+    private ArrayList<String> studentSubject = StudentSubjects.getInstance().getStudentSubjects();
     private ArrayList<String> idSubjects = new ArrayList<>();
     private ArrayList<ArrayList<String>> subjectsHavetoPass = new ArrayList<>();
     private ArrayList<String> status = new ArrayList<>();
-    private ArrayList<String> finalSub = new ArrayList<>();
+    private ArrayList<String> checkSubject = new ArrayList<>();
 
     private ArrayList<String> checkStatus = new ArrayList<>();
 
@@ -52,11 +52,9 @@ public class checkYear1Controller {
         System.out.println(subjectsHavetoPass);
         System.out.println(status);
     }
-    public void checkSem1() {
+    public void checkYear1() {
         if (calculus1.isSelected()) {
             cal = "Calculus I";
-            System.out.println(status);
-
         }
         else if (!calculus1.isSelected()) {
             cal = "";
@@ -103,36 +101,35 @@ public class checkYear1Controller {
         else if (!Funcom.isSelected()) {
             func = "";
         }
-        studentSubject.add(cal);
-        studentSubject.add(intro);
-        studentSubject.add(funp);
-        studentSubject.add(digi);
-        studentSubject.add(know);
-        studentSubject.add(cal2);
-        studentSubject.add(comp);
-        studentSubject.add(func);
-        System.out.println(studentSubject);
+        checkSubject.add(cal);
+        checkSubject.add(intro);
+        checkSubject.add(funp);
+        checkSubject.add(digi);
+        checkSubject.add(know);
+        checkSubject.add(cal2);
+        checkSubject.add(comp);
+        checkSubject.add(func);
     }
     @FXML public void saveOnAction(MouseEvent mouseEvent) {
-        finalSub.removeAll(studentSubject);
-        for (int i=studentSubject.size()-8; i<studentSubject.size(); i++) {
-            finalSub.add(studentSubject.get(i));
-            System.out.println(finalSub);
+        studentSubject.removeAll(checkSubject);
+        for (int i=checkSubject.size()-8; i<checkSubject.size(); i++) {
+            studentSubject.add(checkSubject.get(i));
         }
-        if (finalSub.get(2).equals("Fund. Programming Concepts") && finalSub.get(1).equals("")) {
+        if (studentSubject.get(2).equals("Fund. Programming Concepts") && studentSubject.get(1).equals("")) {
             String s = "If you passed Fund. Programming Concepts, you have to pass Intro. to Computer Science before.";
             Alert(s);
         }
-        if (finalSub.get(5).equals("Calculus II") && finalSub.get(0).equals("")) {
+        if (studentSubject.get(5).equals("Calculus II") && studentSubject.get(0).equals("")) {
             String s = "If you passed Calculus II, you have to pass Calculus I before.";
             Alert(s);
         }
-        if (finalSub.get(6).equals("Computer Programming") && finalSub.get(2).equals("") ||
-                finalSub.get(6).equals("Computer Programming") &&finalSub.get(1).equals("") ||
-                finalSub.get(6).equals("Computer Programming") && finalSub.get(2).equals("") && finalSub.get(1).equals("")) {
+        if (studentSubject.get(6).equals("Computer Programming") && studentSubject.get(2).equals("") ||
+                studentSubject.get(6).equals("Computer Programming") && studentSubject.get(1).equals("") ||
+                studentSubject.get(6).equals("Computer Programming") && studentSubject.get(2).equals("") && studentSubject.get(1).equals("")) {
             String s = "If you passed Computer Programming, you have to pass Fund. Programming Concepts and Intro. to Computer Science before.";
             Alert(s);
         }
+        System.out.println(studentSubject);
     }
 
     public void Alert(String sub) {

@@ -32,20 +32,20 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <CheckBox fx:id="calculus1" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="189.0" text="Calculus I" />
-                        <CheckBox fx:id="IntroCom" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="192.0" text="Intro. to Com-Sci" />
-                        <CheckBox fx:id="FunPro" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="190.0" text="Fund. Prog.Concepts" />
-                        <CheckBox fx:id="Digital" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="188.0" text="Digital Computer Logic" />
-                        <CheckBox fx:id="Knowledge" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="189.0" text="Knowledge of the Land" />
+                        <CheckBox fx:id="calculus1" mnemonicParsing="false" onAction="#checkYear1" prefHeight="30.0" prefWidth="189.0" text="Calculus I" />
+                        <CheckBox fx:id="IntroCom" mnemonicParsing="false" onAction="#checkYear1" prefHeight="30.0" prefWidth="192.0" text="Intro. to Com-Sci" />
+                        <CheckBox fx:id="FunPro" mnemonicParsing="false" onAction="#checkYear1" prefHeight="30.0" prefWidth="190.0" text="Fund. Prog.Concepts" />
+                        <CheckBox fx:id="Digital" mnemonicParsing="false" onAction="#checkYear1" prefHeight="30.0" prefWidth="188.0" text="Digital Computer Logic" />
+                        <CheckBox fx:id="Knowledge" mnemonicParsing="false" onAction="#checkYear1" prefHeight="30.0" prefWidth="189.0" text="Knowledge of the Land" />
                      </children>
                   </VBox>
                </children>
             </VBox>
             <VBox prefHeight="196.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <CheckBox fx:id="calculus2" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="189.0" text="Calculus II" />
-                  <CheckBox fx:id="comPro" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="189.0" text="Computer Programming" />
-                  <CheckBox fx:id="Funcom" mnemonicParsing="false" onAction="#checkSem1" prefHeight="30.0" prefWidth="190.0" text="Fund. of Computing" />
+                  <CheckBox fx:id="calculus2" mnemonicParsing="false" onAction="#checkYear1" prefHeight="30.0" prefWidth="189.0" text="Calculus II" />
+                  <CheckBox fx:id="comPro" mnemonicParsing="false" onAction="#checkYear1" prefHeight="30.0" prefWidth="189.0" text="Computer Programming" />
+                  <CheckBox fx:id="Funcom" mnemonicParsing="false" onAction="#checkYear1" prefHeight="30.0" prefWidth="190.0" text="Fund. of Computing" />
                </children>
             </VBox>
             <Label prefHeight="35.0" prefWidth="188.0" text="Semester 2" GridPane.columnIndex="1">

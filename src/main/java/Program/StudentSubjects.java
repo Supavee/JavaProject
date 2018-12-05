@@ -7,30 +7,34 @@ public class StudentSubjects{
     private String studentID;
     private ArrayList<String> studentSubjects = new ArrayList();
 
-    public StudentSubjects(String studentName, String studentID, ArrayList<String> studentSubjects) {
-        this.studentName = studentName;
-        this.studentID = studentID;
-        this.studentSubjects = studentSubjects;
+    private static StudentSubjects instance = new StudentSubjects();
+
+    private StudentSubjects(){}
+
+    public static StudentSubjects getInstance(){
+        if(instance == null)
+            instance = new StudentSubjects();
+        return instance;
     }
 
     public String getStudentName() {
         return studentName;
     }
 
-    public String getStudentID() {
-        return studentID;
-    }
-
-    public ArrayList<String> getStudentSubjects() {
-        return studentSubjects;
-    }
-
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
 
+    public String getStudentID() {
+        return studentID;
+    }
+
     public void setStudentID(String studentID) {
         this.studentID = studentID;
+    }
+
+    public ArrayList<String> getStudentSubjects() {
+        return studentSubjects;
     }
 
     public void setStudentSubjects(ArrayList<String> studentSubjects) {

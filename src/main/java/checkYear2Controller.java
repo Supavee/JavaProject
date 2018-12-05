@@ -41,7 +41,7 @@ public class checkYear2Controller {
     private FileJSONReader fileJSONReader;
     private StudentSubjects studentSubjects;
 
-    private ArrayList<String> studentSubject = new ArrayList<>();
+    private ArrayList<String> studentSubject = StudentSubjects.getInstance().getStudentSubjects();
     private ArrayList<String> idSubjects = new ArrayList<>();
     private ArrayList<ArrayList<String>> subjectsHavetoPass = new ArrayList<>();
     private ArrayList<String> status = new ArrayList<>();
@@ -65,9 +65,6 @@ public class checkYear2Controller {
     public void checkSem1() {
         if (basicLinear.isSelected()) {
             linear = "Basic Linear Algebra";
-            status.get(0).replace("NotPass", "Basic Linear Algebra");
-            System.out.println(status);
-
         } else if (!basicLinear.isSelected()) {
             linear = "";
         }
@@ -109,7 +106,6 @@ public class checkYear2Controller {
         studentSubject.add(datab);
         studentSubject.add(algo);
         studentSubject.add(assem);
-        System.out.println(studentSubject);
     }
 
     @FXML
@@ -117,24 +113,26 @@ public class checkYear2Controller {
         finalSub.removeAll(studentSubject);
         for (int i = studentSubject.size() - 8; i < studentSubject.size(); i++) {
             finalSub.add(studentSubject.get(i));
-            System.out.println(finalSub);
         }
-//        if (finalSub.get(5).equals("Algorithms Design and Analysis") && finalSub.get(2).equals("")) {
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Information Dialog");
-//            alert.setHeaderText(null);
-//            alert.setContentText("If you will pass Algorithms, you have to pass Data Structure before.");
-//
-//            alert.showAndWait();
-//        }
+        System.out.println(studentSubject);
     }
 
-        public void changetoPageYear2 (ActionEvent actionEvent) throws IOException {
-            Stage stage = (Stage) back.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("year2.fxml"));
-            stage.setTitle("Regis");
-            stage.setScene(new Scene(root, 600, 400));
-            stage.show();
-        }
+    public void Alert(String sub) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(sub);
+
+        alert.showAndWait();
     }
+
+    public void changetoPageYear2 (ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) back.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("year2.fxml"));
+
+        stage.setTitle("Regis");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
+    }
+}
 
