@@ -21,10 +21,6 @@ public class Year1Controller implements Initializable {
     ObservableList list = FXCollections.observableArrayList();
     ObservableList list2 = FXCollections.observableArrayList();
 
-    ObservableList info = FXCollections.observableArrayList();
-    ObservableList info2 = FXCollections.observableArrayList();
-
-
     private ArrayList<Subject> subjects;
     private FileJSONReader fileJSONReader ;
     @FXML public ListView<Subject> subjectList;
@@ -33,7 +29,6 @@ public class Year1Controller implements Initializable {
     @FXML private TextArea screen;
     @FXML private Button goBack;
     @FXML private Label level;
-    @FXML private Button checkYear1;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -49,12 +44,10 @@ public class Year1Controller implements Initializable {
         for (Subject sub : fileJSONReader.readFileJSON()) {
             if (i <= 5) {
                 list.add(sub);
-                info.add(sub.toString());
                 i++;
             }
             else if (i<=8) {
                 list2.add(sub);
-                info2.add(sub.toString());
                 i++;
             }
 
@@ -128,14 +121,5 @@ public class Year1Controller implements Initializable {
         stage.setScene(new Scene(root,600,400));
         stage.show();
     }
-
-    public void changetoPageCheck (ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) checkYear1.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("checkYear1.fxml"));
-        stage.setTitle("Regis");
-        stage.setScene(new Scene(root,600,400));
-        stage.show();
-    }
-
 
 }

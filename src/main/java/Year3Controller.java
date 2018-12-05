@@ -17,12 +17,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Year3Controller implements Initializable {
-
     ObservableList list = FXCollections.observableArrayList();
     ObservableList list2 = FXCollections.observableArrayList();
-
-    ObservableList info = FXCollections.observableArrayList();
-    ObservableList info2 = FXCollections.observableArrayList();
 
     private ArrayList<Subject> subjects;
     private FileJSONReader fileJSONReader;
@@ -46,12 +42,10 @@ public class Year3Controller implements Initializable {
         for (Subject sub : fileJSONReader.readFileJSON()) {
             if (15<i && i<=23) {
                 list.add(sub);
-                info.add(sub.toString());
                 i++;
             }
             else if (i>23 && i<=33) {
                 list2.add(sub);
-                info2.add(sub.toString());
                 i++;
             }
             i++;
@@ -120,14 +114,6 @@ public class Year3Controller implements Initializable {
     public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) goBack.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("chooseyear.fxml"));
-        stage.setTitle("Regis");
-        stage.setScene(new Scene(root,600,400));
-        stage.show();
-    }
-
-    public void changetoPageCheck (ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) checkYear3.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("checkYear3.fxml"));
         stage.setTitle("Regis");
         stage.setScene(new Scene(root,600,400));
         stage.show();

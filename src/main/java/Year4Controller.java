@@ -17,13 +17,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Year4Controller implements Initializable {
-
-
     ObservableList list = FXCollections.observableArrayList();
     ObservableList list2 = FXCollections.observableArrayList();
-
-    ObservableList info = FXCollections.observableArrayList();
-    ObservableList info2 = FXCollections.observableArrayList();
 
     private ArrayList<Subject> subjects;
     private FileJSONReader fileJSONReader;
@@ -49,12 +44,10 @@ public class Year4Controller implements Initializable {
         for (Subject sub : fileJSONReader.readFileJSON()) {
             if (24<i && i<=25) {
                 list.add(sub);
-                info.add(sub.toString());
                 i++;
             }
             else if (25<i && i<=27) {
                 list2.add(sub);
-                info2.add(sub.toString());
                 i++;
             }
             i++;
@@ -83,8 +76,6 @@ public class Year4Controller implements Initializable {
                 }
             }
         });
-
-
     }
 
     @FXML
@@ -129,11 +120,4 @@ public class Year4Controller implements Initializable {
         stage.show();
     }
 
-    public void changetoPageCheck (ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) checkYear4.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("checkYear4.fxml"));
-        stage.setTitle("Regis");
-        stage.setScene(new Scene(root,600,400));
-        stage.show();
-    }
 }

@@ -35,7 +35,6 @@ public class checkYear1Controller {
     private ArrayList<String> studentSubject = StudentSubjects.getInstance().getStudentSubjects();
     private ArrayList<String> idSubjects = new ArrayList<>();
     private ArrayList<ArrayList<String>> subjectsHavetoPass = new ArrayList<>();
-    private ArrayList<String> status = new ArrayList<>();
     private ArrayList<String> checkSubject = new ArrayList<>();
 
     private ArrayList<String> checkStatus = new ArrayList<>();
@@ -47,10 +46,8 @@ public class checkYear1Controller {
         for (Subject sub : fileJSONReader.readFileJSON()) {
             idSubjects.add(sub.getIdSubject());
             subjectsHavetoPass.add(sub.getBeforeThisSubject());
-            status.add(sub.getStatus());
         }
         System.out.println(subjectsHavetoPass);
-        System.out.println(status);
     }
     public void checkYear1() {
         if (calculus1.isSelected()) {
@@ -148,6 +145,111 @@ public class checkYear1Controller {
         stage.setScene(new Scene(root,600,400));
         stage.show();
     }
+// if (checkSubjectY1.size()==0 && checkSubjectY2.size()==0 && checkSubjectY3.size()==0 && checkSubjectY4.size()==0) {
+//            String s = "You must select the data first.";
+//            Alert(s);
+//        }
+//        if (studentSubject.get(2).equals("Fund. Programming Concepts") && studentSubject.get(1).equals("")) {
+//            studentSubject.remove("Fund. Programming Concepts");
+//            studentSubject.add(2,"");
+//            String s = "If you passed Fund. Programming Concepts, you have to pass Intro. to Computer Science before.";
+//            Alert(s);
+//        }
+//        if (studentSubject.get(5).equals("Calculus II") && studentSubject.get(0).equals("")) {
+//            studentSubject.remove("Calculus II");
+//            studentSubject.add(5,"");
+//            String s = "If you passed Calculus II, you have to pass Calculus I before.";
+//            Alert(s);
+//        }
+//        if (studentSubject.get(6).equals("Computer Programming") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(6).equals("Computer Programming") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(6).equals("Computer Programming") && studentSubject.get(2).equals("") && studentSubject.get(1).equals("")) {
+//            studentSubject.remove("Computer Programming");
+//            studentSubject.add(6,"");
+//            String s = "If you passed Computer Programming, you have to pass Fund. Programming Concepts " +
+//                    "and Intro. to Computer Science before.";
+//            Alert(s);
+//        }
+//        if (studentSubject.get(8).equals("Basic Linear Algebra") && studentSubject.get(5).equals("") ||
+//                studentSubject.get(8).equals("Basic Linear Algebra") && studentSubject.get(0).equals("") ||
+//                studentSubject.get(8).equals("Basic Linear Algebra") && studentSubject.get(5).equals("")
+//                && studentSubject.get(0).equals("")) {
+//            studentSubject.remove("Basic Linear Algebra");
+//            studentSubject.add(8,"");
+//            String s = "If you passed Basic Linear Algebra, you have to pass Calculus I " +
+//                    "and Calculus II before.";
+//            Alert(s);
+//        }
+//        if (studentSubject.get(9).equals("Software Construction") && studentSubject.get(6).equals("") ||
+//                studentSubject.get(9).equals("Software Construction") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(9).equals("Software Construction") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(9).equals("Software Construction") && studentSubject.get(6).equals("") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(9).equals("Software Construction") && studentSubject.get(6).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(9).equals("Software Construction") && studentSubject.get(1).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(9).equals("Software Construction") && studentSubject.get(6).equals("") && studentSubject.get(1).equals("") && studentSubject.get(2).equals("")) {
+//            studentSubject.remove("Software Construction");
+//            studentSubject.add(9,"");
+//            String s = "If you passed Software Construction, you have to pass Computer Programming " +
+//                    ", Fund. Programming Concepts and Intro. to Computer Science before.";
+//            Alert(s);
+//        }
+//        if (studentSubject.get(10).equals("Data Structures") && studentSubject.get(6).equals("") ||
+//                studentSubject.get(10).equals("Data Structures") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(10).equals("Data Structures") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(10).equals("Data Structures") && studentSubject.get(6).equals("") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(10).equals("Data Structures") && studentSubject.get(6).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(10).equals("Data Structures") && studentSubject.get(1).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(10).equals("Data Structures") && studentSubject.get(6).equals("") && studentSubject.get(1).equals("") && studentSubject.get(2).equals("")) {
+//            studentSubject.remove("Data Structures");
+//            studentSubject.add(10,"");
+//            String s = "If you passed Software Construction, you have to pass Computer Programming " +
+//                    ", Fund. Programming Concepts and Intro. to Computer Science before.";
+//            Alert(s);
+//        }
+//        if (studentSubject.get(12).equals("Fundamental of Database Systems") && studentSubject.get(6).equals("") ||
+//                studentSubject.get(12).equals("Fundamental of Database Systems") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(12).equals("Fundamental of Database Systems") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(12).equals("Fundamental of Database Systems") && studentSubject.get(6).equals("") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(12).equals("Fundamental of Database Systems") && studentSubject.get(6).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(12).equals("Fundamental of Database Systems") && studentSubject.get(1).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(12).equals("Fundamental of Database Systems") && studentSubject.get(6).equals("") && studentSubject.get(1).equals("") && studentSubject.get(2).equals("")) {
+//            studentSubject.remove("Fundamental of Database Systems");
+//            studentSubject.add(12,"");
+//            String s = "If you passed Software Construction, you have to pass Computer Programming " +
+//                    ", Fund. Programming Concepts and Intro. to Computer Science before.";
+//            Alert(s);
+//        }
+//        if ((studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(10).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(6).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(10).equals("") && studentSubject.get(6).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(10).equals("") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(10).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(6).equals("") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(6).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(1).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(10).equals("") && studentSubject.get(6).equals("") && studentSubject.get(1).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(10).equals("") && studentSubject.get(6).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(6).equals("") && studentSubject.get(1).equals("") && studentSubject.get(2).equals("") ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(10).equals("")&& studentSubject.get(6).equals("") && studentSubject.get(1).equals("") && studentSubject.get(2).equals("")) ||
+//                studentSubject.get(13).equals("Fundamental of Database Systems") && studentSubject.get(7).equals("")) {
+//            studentSubject.remove("Fundamental of Database Systems");
+//            studentSubject.add(13,"");
+//            String s = "If you passed Software Construction, you have to pass Computer Programming " +
+//                    ", Fund. Programming Concepts and Intro. to Computer Science before.";
+//            Alert(s);
+//        }
 
+//        save.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                String setText ="";
+//                for (String s : studentSubject) {
+//                    setText+=s+"\n";
+//                }
+//                showSub.setText(setText);
+//            }
+//        });
 
 }

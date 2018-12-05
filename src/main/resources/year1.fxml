@@ -48,11 +48,10 @@
                   <Font name="Calisto MT" size="29.0" />
                </font>
             </Label>
-            <TextArea fx:id="screen" layoutX="45.0" layoutY="68.0" onDragDetected="#displaySelected" prefHeight="259.0" prefWidth="264.0" />
+            <TextArea fx:id="screen" layoutX="45.0" layoutY="68.0" onDragDetected="#displaySelected" prefHeight="259.0" prefWidth="264.0" wrapText="true" />
             <Button fx:id="goBack" layoutX="45.0" layoutY="343.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="34.0" prefWidth="82.0" text="Back" />
             <Label fx:id="level" alignment="CENTER" layoutX="241.0" layoutY="339.0" onMouseClicked="#displaySelected" prefHeight="21.0" prefWidth="68.0" style="-fx-background-color: #000000;" text="LEVEL" textFill="WHITE" />
          </children>
       </Pane>
-      <Button fx:id="checkYear1" layoutX="73.0" layoutY="360.0" mnemonicParsing="false" onAction="#changetoPageCheck" prefHeight="34.0" prefWidth="132.0" text="Check Subject" />
    </children>
 </Pane>

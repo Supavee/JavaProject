@@ -16,7 +16,6 @@ public class StudentSubjects{
             instance = new StudentSubjects();
         return instance;
     }
-
     public String getStudentName() {
         return studentName;
     }
@@ -43,7 +42,7 @@ public class StudentSubjects{
 
     @Override
     public String toString() {
-        String sub = getStudentSubjects().toString();
+        String sub = getStudentSubjects().toString() + "\n";
         return sub;
     }
 }

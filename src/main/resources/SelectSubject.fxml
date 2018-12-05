@@ -3,6 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -10,9 +13,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SelectSubjectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SelectSubjectController">
    <children>
-      <GridPane layoutX="22.0" layoutY="42.0" prefHeight="372.0" prefWidth="957.0">
+      <ImageView fitHeight="830.0" fitWidth="1118.0" layoutX="-94.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@selectsub.jpg" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="22.0" layoutY="42.0" prefHeight="372.0" prefWidth="931.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0" />
@@ -51,16 +59,16 @@
             <VBox prefHeight="145.0" prefWidth="280.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 1" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="197.0" text="Operating Systems" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="271.0" text="System Analysis &amp; Design" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="291.0" text="Intellectual Prop. &amp; Profess. Ethics" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="210.0" text="Seminar" />
+                  <CheckBox fx:id="operating" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="197.0" text="Operating Systems" />
+                  <CheckBox fx:id="systemAnalysis" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="271.0" text="System Analysis &amp; Design" />
+                  <CheckBox fx:id="intellectual" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="291.0" text="Intellectual Prop. &amp; Profess. Ethics" />
+                  <CheckBox fx:id="seminar" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="210.0" text="Seminar" />
                </children>
             </VBox>
             <VBox prefHeight="145.0" prefWidth="280.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 1" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="168.0" text="Co-op. Education" />
+                  <CheckBox fx:id="coOpEdu" mnemonicParsing="false" onAction="#checkYear4" prefHeight="23.0" prefWidth="168.0" text="Co-op. Education" />
                </children>
             </VBox>
             <VBox prefHeight="145.0" prefWidth="280.0" GridPane.rowIndex="2">
@@ -82,26 +90,33 @@
             <VBox prefHeight="145.0" prefWidth="280.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 2" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="186.0" text="Inform. System Security" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="161.0" text="Automata Theory" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="247.0" text="Comp. Commu. &amp; Protocols" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="215.0" text="Co-op. Edu Preparation" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="216.0" text="Compiler Techniques" />
+                  <CheckBox fx:id="inforSystem" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="186.0" text="Inform. System Security" />
+                  <CheckBox fx:id="automata" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="161.0" text="Automata Theory" />
+                  <CheckBox fx:id="compliertech" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="216.0" text="Compiler Techniques" />
+                  <CheckBox fx:id="prinInCS" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="247.0" text="Prin. in CCs &amp; Cloud Computing" />
+                  <CheckBox fx:id="coOpEduPre" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="215.0" text="Co-op. Edu Preparation" />
                </children>
             </VBox>
-            <VBox prefHeight="190.0" prefWidth="171.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <VBox prefHeight="165.0" prefWidth="171.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 2" />
-                  <CheckBox mnemonicParsing="false" prefHeight="23.0" prefWidth="139.0" text="CS Project" />
+                  <CheckBox fx:id="csProject" mnemonicParsing="false" onAction="#checkYear4" prefHeight="23.0" prefWidth="139.0" text="CS Project" />
                </children>
             </VBox>
          </children>
       </GridPane>
-      <Label layoutX="22.0" layoutY="14.0" prefHeight="17.0" prefWidth="246.0" text="Select subject that pass">
+      <Label layoutX="22.0" layoutY="7.0" prefHeight="35.0" prefWidth="369.0" text="Select subject that pass">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="24.0" />
          </font></Label>
-      <Button fx:id="save" layoutX="741.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#saveOnAction" prefHeight="25.0" prefWidth="105.0" text="Saved" />
-      <Button fx:id="back" layoutX="867.0" layoutY="430.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="25.0" prefWidth="105.0" text="Back" />
+      <Button fx:id="save" layoutX="606.0" layoutY="533.0" mnemonicParsing="false" onMouseClicked="#saveOnAction" prefHeight="25.0" prefWidth="105.0" text="Saved" />
+      <Button fx:id="back" layoutX="606.0" layoutY="635.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="25.0" prefWidth="105.0" text="Back" />
+      <TextArea fx:id="showSub" editable="false" layoutX="30.0" layoutY="391.0" onMouseClicked="#save" prefHeight="283.0" prefWidth="557.0" />
+      <Button fx:id="show" layoutX="606.0" layoutY="583.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="31.0" prefWidth="105.0" text="Show" />
+      <Label layoutX="30.0" layoutY="711.0" prefHeight="31.0" prefWidth="831.0" text="หมายเหตุ : ถ้าเลือกวิชาที่มีตัววิชาก่อนหน้าที่ต้องผ่านแล้วยังไม่ได้เรียน status จะยังขึ้น NotPass แม้ว่าจะกดเลือกวิชานั้น">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

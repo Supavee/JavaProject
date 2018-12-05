@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -74,7 +73,7 @@ public class Controller {
         Stage stage = (Stage) register.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("SelectSubject.fxml"));
         stage.setTitle("Regis");
-        stage.setScene(new Scene(root,1000,500));
+        stage.setScene(new Scene(root,950,750));
         stage.show();
     }
 
@@ -85,13 +84,11 @@ public class Controller {
         studentSubjects.setStudentID(IDStu);
         studentSubjects.setStudentName(nameStu);
         studentSubjects.setStudentSubjects(new ArrayList<String>());
-        name.setText("");
-        id.setText("");
+//        name.setText("");
+//        id.setText("");
+//        stuSub.setText(studentSubjects.toString());
     }
 
-    @FXML public void setSubjectArea(MouseEvent mouseEvent) {
-        stuSub.setText(studentSubjects.toString());
-    }
 
     public StudentSubjects getStudentSubjects() {
         return studentSubjects;

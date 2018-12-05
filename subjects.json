@@ -2,43 +2,43 @@
     {
         "nameSubject": "Calculus I",
         "idSubject": "01417111",
-        "status": "NotPass",
         "credit": "3",
         "level": "normal",
-        "beforeThisSubject": [ null ]
-
+        "BeforeThisSubject": [  ],
+        "info": "Limits and continuity, derivatives and applications, differentials and  applications, integration and applications."
     },
     {
         "nameSubject": "Intro. to Computer Science",
         "idSubject": "01418114",
-        "status": "NotPass",
         "credit": "2",
         "level": "easy",
-        "beforeThisSubject": [ null ]
+        "BeforeThisSubject": [  ],
+        "info": "Computing, ability and performance of computer, reasoning and solving problems using logic, basic algorithms and data structures, programming language concepts, software developments and applications, professional information technology laws and ethics, Internet and World Wide Web."
+
     },
     {
         "nameSubject": "Fund. Programming Concepts",
         "idSubject": "01418112",
-        "status": "NotPass",
         "credit": "3",
         "level": "hard",
-        "beforeThisSubject": [ "01418114" ]
+        "beforeThisSubject": [ "Intro. to Computer Science" ],
+        "info": "-"
     },
     {
         "nameSubject": "Digital Computer Logic",
         "idSubject": "01418131",
-        "status": "NotPass",
         "credit": "3",
         "level": "easy",
-        "beforeThisSubject": [ null ]
+        "BeforeThisSubject": [  ],
+        "info": "Basic logic design, representation of both data and information by digital signals, coding, number representation and arithmetic, computer architecture."
     },
     {
         "nameSubject": "Knowledge of the Land",
         "idSubject": "01999111",
-        "status": "NotPass",
         "credit": "2",
         "level": "easy",
-        "beforeThisSubject": [ null ]
+        "BeforeThisSubject": [  ],
+        "info": "History, uniqueness and identity of Kasetsart University. Knowledge of the land for the well-being of nation. Learning from role models. Realization of being a Thai and world’s citizen. Reinforcement and development of learning skills and goal-oriented work within the context of integrity, knowledge creation and unity.History, uniqueness and identity of Kasetsart University. Knowledge of the land for the well-being of nation. Learning from role models. Realization of being a Thai and world’s citizen. Reinforcement and development of learning skills and goal-oriented work within the context of integrity, knowledge creation and unity."
     },
 
 
@@ -47,26 +47,26 @@
     {
         "nameSubject": "Calculus II",
         "idSubject": "01417112",
-        "status": "NotPass",
         "credit": "3",
         "level": "normal",
-        "beforeThisSubject": [ "01417111" ]
+        "beforeThisSubject": [ "Calculus I" ],
+        "info": "Space geometry, partial derivatives, multiple integrals, elementary differential equations. "
     },
     {
         "nameSubject": "Computer Programming",
         "idSubject": "01418113",
-        "status": "NotPass",
         "credit": "3",
-        "level": "hard",
-        "beforeThisSubject": [ "01418112" ]
+        "level": "normal",
+        "beforeThisSubject": [ "Fund. Programming Concepts" ],
+        "info": "Programming with a high-level language, input/output statements, variables, conditional statements, functions, procedural abstractions, unit testing, functional programming, recursion, repetition statements, basic data structures, data abstractions, object-oriented programming, classes, interface and implementation, inheritance, polymorphisms, multiple inheritance, and mixin."
     },
     {
         "nameSubject": "Fundamentals of Computing",
         "idSubject": "01418132",
-        "status": "NotPass",
         "credit": "4",
         "level": "normal",
-        "beforeThisSubject": [ null ]
+        "BeforeThisSubject": [  ],
+        "info": "Theory of discrete computing, probability and statistics, implementation and application in computer science "
 
     },
 
@@ -77,34 +77,34 @@
     {
         "nameSubject": "Basic Linear Algebra",
         "idSubject": "01417322",
-        "status": "NotPass",
         "credit": "3",
         "level": "hard",
-        "beforeThisSubject": [ "01417112" ]
+        "beforeThisSubject": [ "Calculus II" ],
+        "info": "Vector spaces, linear transformations and matrices, systems of linear equations, eigenvalues, eigenvectors, diagonalization, applications. "
     },
     {
         "nameSubject": "Software Construction",
         "idSubject": "01418211",
-        "status": "NotPass",
         "credit": "3",
         "level": "hard",
-        "beforeThisSubject": [ "01418113" ]
+        "beforeThisSubject": [ "Computer Programming" ],
+        "info": "Programming with a statically-typed object-oriented language, types, objects, classes, subclasses, interfaces, abstract classes, exceptions, method call semantics, type hierarchy, software specifications, representation invariant, decoupling, module dependency diagrams, behavioral diagrams, refactoring, design patterns, object-oriented design principles, event-based programming, concurrent programming."
     },
     {
         "nameSubject": "Data Structures",
         "idSubject": "01418231",
-        "status": "NotPass",
         "credit": "3",
-        "level": "hard",
-        "beforeThisSubject": [ "01418113" ]
+        "level": "normal",
+        "beforeThisSubject": [ "Computer Programming" ],
+        "info": "Data structures, algorithms for implementation of lists, stacks, queues, trees and graphs, file structures and file processing. "
     },
     {
         "nameSubject": "Principles of Statistics",
         "idSubject": "01422111",
-        "status": "NotPass",
         "credit": "3",
-        "level": "normal",
-        "beforeThisSubject": [ null ]
+        "level": "easy",
+        "BeforeThisSubject": [  ],
+        "info": "Concepts of statistics, measures of relative standing, measures of center, measures of dispersion, random variables and their probability distributions, binomial distribution, Poisson distribution, normal distribution, sampling distribution, statistical inference for one and two populations, analysis of frequency data, one-way analysis of variance, simple linear regression analysis"
     },
 
 
@@ -114,26 +114,26 @@
     {
         "nameSubject": "Fundamental of Database Systems",
         "idSubject": "01418221",
-        "status": "NotPass",
         "credit": "3",
-        "level": "normal",
-        "beforeThisSubject": [ "01418113" ]
+        "level": "hard",
+        "beforeThisSubject": [ "Computer Programming" ],
+        "info": "Introduction to database concepts, goals of database management system, data independence, integrity and reliability, logical and physical organizations; schema and subschema, data models, hierarchical, network and relational models, data normalization, data description languages, data dictionary, query facilities, file organization, file security. "
     },
     {
         "nameSubject": "Algorithms Design & Analysis",
         "idSubject": "01418232",
-        "status": "NotPass",
         "credit": "3",
         "level": "hard",
-        "beforeThisSubject": [ "01418231","01418132" ]
+        "beforeThisSubject": [ "Computer Programming" ],
+        "info": "Basic concepts of algorithms, mathematical analysis of algorithms, analysis of sorting and searching algorithms, algorithmic techniques, algorithm design methods."
     },
     {
         "nameSubject": "Assembly Language and Computer Architecture",
         "idSubject": "01418233",
-        "status": "NotPass",
         "credit": "4",
         "level": "hard",
-        "beforeThisSubject": [ "01418113" ,"01418131"]
+        "beforeThisSubject": [ "Computer Programming" , "Digital Computer Logic" ],
+        "info": "Assembly language structure, addressing techniques, file input/output, program segmentation and linkage, assembly program construction, computer architecture characteristics, effect on the design and performance of system, price-performance tradeoffs, instruction sets design, CPU, I/O system, pipelining, vector and RISCs architecture, parallel architectures.  "
 
     },
 
@@ -143,34 +143,34 @@
     {
         "nameSubject": "System Analysis & Design",
         "idSubject": "01418321",
-        "status": "NotPass",
         "credit": "3",
         "level": "hard",
-        "beforeThisSubject": [ "01418221","01418211" ]
+        "beforeThisSubject": [ "Fundamental of Database Systems" , "Software Construction" ],
+        "info": "Basic analysis steps, system analysis tools, systems flowchart, decision table and decision tree, feasibility study, cost effective analysis, input, output and design, computer process design, documentation, implementation and evaluation, proving the design, case studies.  "
     },
     {
         "nameSubject": "Operating Systems",
         "idSubject": "01418331",
-        "status": "NotPass",
         "credit": "4",
         "level": "hard",
-        "beforeThisSubject": [ "01418233" ]
+        "beforeThisSubject": [ "Assembly Language and Computer Architecture" ],
+        "info": "Development of computer architecture and operating systems, operating system structure, processes and threads, scheduling, deadlocks, memory hierarchy, memory management, virtual memory, file system management, input output system management, security, protection, distributed operating systems. "
     },
     {
         "nameSubject": "Intellectual Prop. & Profess. Ethics",
         "idSubject": "01418341",
-        "status": "NotPass",
         "credit": "3",
         "level": "normal",
-        "beforeThisSubject": [ null ]
+        "BeforeThisSubject": [  ],
+        "info": "Professional ethics, categories of intellectual property acquisition of copyright, rights of copyright holder and author, copyright infringement and exceptions, performer’s rights, information access and rights of privacy, free software license, free documentation license, shrink wrap license, electronics transaction law, electronic signature, computer crime, case studies.  "
     },
     {
         "nameSubject": "Seminar",
         "idSubject": "01418497",
-        "status": "NotPass",
         "credit": "1",
-        "level": "hard",
-        "beforeThisSubject": [ "01418221" ]
+        "level": "normal",
+        "BeforeThisSubject": [ "Fundamental of Database Systems" ],
+        "info": "Presentation and discussion on current interesting topics in computer science at the bachelor’s degree level.  "
     },
 
 
@@ -180,61 +180,61 @@
     {
         "nameSubject": "Information System Security",
         "idSubject": "01418332",
-        "status": "NotPass",
         "credit": "3",
         "level": "hard",
-        "beforeThisSubject": [ "01418331" ]
+        "BeforeThisSubject": [ "Operating Systems" ],
+        "info": "Encryption techniques, authentication techniques, security administration, legal issues and ethics in computer system and communication network security.  "
     },
     {
         "nameSubject": "Automata Theory",
         "idSubject": "01418333",
-        "status": "NotPass",
         "credit": "2",
         "level": "hard",
-        "beforeThisSubject": [ "01418132" ]
+        "BeforeThisSubject": [ "Fundamentals of Computing" ],
+        "info": "Finite state concept, acceptors, regular expressions, closure properties, sequential machine and finite state transducers, state minimization, formal language grammars, computability and Turing machines.  "
     },
     {
         "nameSubject": "Compiler Techniques",
         "idSubject": "01418334",
-        "status": "NotPass",
         "credit": "2",
         "level": "hard",
-        "beforeThisSubject": [ "01418333" ]
+        "BeforeThisSubject": [ "Automata Theory" ],
+        "info": "Compilers and translators, phases of a compiler, notation and concepts for languages and grammars, lexical analysis, parse trees and derivations, ambiguity, parsing techniques, symbol table, intermediate representation, semantic analysis and code generation.  "
     },
     {
         "nameSubject": "Principles in CCs & Cloud Computing",
         "idSubject": "01418351",
-        "status": "NotPass",
         "credit": "3",
         "level": "hard",
-        "beforeThisSubject": [ "01418331" ]
+        "BeforeThisSubject": [ "Operating Systems" ],
+        "info": "-"
     },
     {
         "nameSubject": "Cooperative Education Preparation",
         "idSubject": "01418390",
-        "status": "NotPass",
         "credit": "1",
         "level": "normal",
-        "beforeThisSubject": [ "01418321" ]
+        "BeforeThisSubject": [ "System Analysis & Design" ],
+        "info": "On the job training as a temporary employee according to the assigned project including report and presentation.  "
     },
 
 
     {
         "nameSubject": "Co-op Education",
         "idSubject": "01418490",
-        "status": "NotPass",
         "credit": "6",
-        "level": "hard",
-        "beforeThisSubject": [ "01418390" ]
+        "level": "normal",
+        "BeforeThisSubject": [ "Cooperative Education Preparation" ],
+        "info": "On the job training as a temporary employee according to the assigned project including report and presentation.  "
     },
 
 
     {
         "nameSubject": "CS Project",
         "idSubject": "01418499",
-        "status": "NotPass",
         "credit": "3",
         "level": "hard",
-        "beforeThisSubject": [ null ]
+        "BeforeThisSubject": [  ],
+        "info": "Project of practical interest in various fields of computer science. "
     }
 ]

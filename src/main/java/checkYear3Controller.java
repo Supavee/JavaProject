@@ -47,10 +47,10 @@ public class checkYear3Controller {
         for (Subject sub : fileJSONReader.readFileJSON()) {
             idSubjects.add(sub.getIdSubject());
             subjectsHavetoPass.add(sub.getBeforeThisSubject());
-            status.add(sub.getStatus());
+
         }
         System.out.println(subjectsHavetoPass);
-        System.out.println(status);
+
     }
 
     public void checkYear1() {

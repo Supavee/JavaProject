@@ -5,19 +5,21 @@ import java.util.ArrayList;
 public class Subject {
     private String nameSubject;
     private String idSubject;
-    private String status;
+    private boolean status;
     private String credit;
     private String level;
     private ArrayList<String> beforeThisSubject = new ArrayList();
+    private String info;
 
-    public Subject(String nameSubject, String idSubject, String status, String credit, String level,
-                   ArrayList<String> beforeThisSubject) {
+    public Subject(String nameSubject, String idSubject, String credit, String level,
+                   ArrayList<String> beforeThisSubject, String info) {
         this.nameSubject = nameSubject;
         this.idSubject = idSubject;
-        this.status = status;
+        this.status = false;
         this.credit = credit;
         this.level = level;
         this.beforeThisSubject = beforeThisSubject;
+        this.info = info;
     }
 
     public String getNameSubject() {
@@ -28,7 +30,7 @@ public class Subject {
         return idSubject;
     }
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
@@ -44,6 +46,8 @@ public class Subject {
         return beforeThisSubject;
     }
 
+    public String getInfo() {return info; }
+
     public void setNameSubject(String nameSubject) {
         this.nameSubject = nameSubject;
     }
@@ -52,7 +56,7 @@ public class Subject {
         this.idSubject = idSubject;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
@@ -68,9 +72,14 @@ public class Subject {
         this.beforeThisSubject = beforeThisSubject;
     }
 
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
     public String toString(){
         return "NAME : " + getNameSubject() + "\n" +
                 "ID : " + getIdSubject() + "\n" +
-                "CREDIT : " + getCredit() + "\n";
+                "CREDIT : " + getCredit() + "\n" +
+                "INFO : " + getInfo();
     }
 }
