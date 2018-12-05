@@ -18,6 +18,7 @@ public class checkYear2Controller {
     @FXML private CheckBox Digital;
     @FXML private CheckBox Knowledge;
 
+
     public void changetoPageYear2 (ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) back.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("year2.fxml"));

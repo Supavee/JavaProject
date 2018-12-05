@@ -25,7 +25,7 @@
                <content>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <ListView fx:id="subjectList" prefHeight="322.0" prefWidth="223.0" />
+                        <ListView fx:id="subjectList" onMouseClicked="#displaySelected" prefHeight="322.0" prefWidth="223.0" />
                      </children>
                   </VBox>
                </content>
@@ -34,7 +34,7 @@
                <content>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <ListView fx:id="subjectList2" prefHeight="322.0" prefWidth="223.0" />
+                        <ListView fx:id="subjectList2" onMouseClicked="#displaySelected2" prefHeight="322.0" prefWidth="223.0" />
                      </children>
                   </VBox>
                </content>
@@ -48,8 +48,9 @@
                   <Font name="Calisto MT" size="29.0" />
                </font>
             </Label>
-            <TextArea fx:id="screen" layoutX="45.0" layoutY="68.0" prefHeight="259.0" prefWidth="264.0" />
-            <Button fx:id="goBack" layoutX="136.0" layoutY="344.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="34.0" prefWidth="82.0" text="Back" />
+            <TextArea fx:id="screen" layoutX="45.0" layoutY="68.0" onDragDetected="#displaySelected" prefHeight="259.0" prefWidth="264.0" />
+            <Button fx:id="goBack" layoutX="45.0" layoutY="346.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="34.0" prefWidth="82.0" text="Back" />
+            <Label fx:id="level" alignment="CENTER" layoutX="242.0" layoutY="335.0" onMouseClicked="#displaySelected" prefHeight="21.0" prefWidth="68.0" style="-fx-background-color: #000000;" text="LEVEL" textFill="WHITE" />
          </children>
       </Pane>
       <Button fx:id="checkYear4" layoutX="74.0" layoutY="341.0" mnemonicParsing="false" onAction="#changetoPageCheck" prefHeight="34.0" prefWidth="132.0" text="Check Subject" />

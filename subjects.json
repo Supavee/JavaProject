@@ -9,20 +9,20 @@
 
     },
     {
-        "nameSubject": "Fund. Programming Concepts",
-        "idSubject": "01418112",
-        "status": "NotPass",
-        "credit": "3",
-        "level": "hard",
-        "beforeThisSubject": [ "01418114" ]
-    },
-    {
         "nameSubject": "Intro. to Computer Science",
         "idSubject": "01418114",
         "status": "NotPass",
         "credit": "2",
         "level": "easy",
         "beforeThisSubject": [ null ]
+    },
+    {
+        "nameSubject": "Fund. Programming Concepts",
+        "idSubject": "01418112",
+        "status": "NotPass",
+        "credit": "3",
+        "level": "hard",
+        "beforeThisSubject": [ "01418114" ]
     },
     {
         "nameSubject": "Digital Computer Logic",

@@ -1,4 +1,4 @@
-import Program.Student;
+import Program.StudentSubjects;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -23,13 +23,14 @@ public class Controller {
     @FXML public TextField id;
     @FXML public Button next;
 
-    private ArrayList<Student> studentSubjects;
+    private ArrayList<StudentSubjects> studentSubjects;
 
     public void initialize() {
         choiceBox.getItems().add("YEAR 1");
         choiceBox.getItems().add("YEAR 2");
         choiceBox.getItems().add("YEAR 3");
         choiceBox.getItems().add("YEAR 4");
+        choiceBox.setValue("CHOOSE YEAR");
 
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
