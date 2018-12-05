@@ -21,7 +21,7 @@ public class checkYear4Controller {
     private FileJSONReader fileJSONReader;
     private StudentSubjects studentSubjects;
 
-    private ArrayList<String> checkSubjectY3 = new ArrayList<>();
+    private ArrayList<String> checkSubjectY4 = new ArrayList<>();
     private ArrayList<String> idSubjects = new ArrayList<>();
     private ArrayList<ArrayList<String>> subjectsHavetoPass = new ArrayList<>();
     private ArrayList<String> status = new ArrayList<>();
@@ -54,8 +54,8 @@ public class checkYear4Controller {
             csPro = "";
         }
 
-        checkSubjectY3.add(coOp);
-        checkSubjectY3.add(csPro);
+        checkSubjectY4.add(coOp);
+        checkSubjectY4.add(csPro);
     }
 
 

@@ -17,8 +17,8 @@ public class checkYear3Controller {
 
     @FXML private Button back;
 
-    @FXML private CheckBox operating;
     @FXML private CheckBox systemAnalysis;
+    @FXML private CheckBox operating;
     @FXML private CheckBox intellectual;
     @FXML private CheckBox seminar;
 
@@ -54,17 +54,17 @@ public class checkYear3Controller {
     }
 
     public void checkYear1() {
-        if (operating.isSelected()) {
-            os = "Operating Systems";
-        }
-        else if (!operating.isSelected()) {
-            os = "";
-        }
         if (systemAnalysis.isSelected()) {
             system = "System Analysis & Design";
         }
         else if (!systemAnalysis.isSelected()) {
             system = "";
+        }
+        if (operating.isSelected()) {
+            os = "Operating Systems";
+        }
+        else if (!operating.isSelected()) {
+            os = "";
         }
         if (intellectual.isSelected()) {
             intell = "Intellectual Prop. & Profess. Ethics";
@@ -109,8 +109,9 @@ public class checkYear3Controller {
             cooppre = "";
         }
 
-        checkSubjectY3.add(os);
+
         checkSubjectY3.add(system);
+        checkSubjectY3.add(os);
         checkSubjectY3.add(intell);
         checkSubjectY3.add(semi);
         checkSubjectY3.add(info);
