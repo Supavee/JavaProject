@@ -2,15 +2,12 @@ package Program;
 
 import java.util.ArrayList;
 
-public class StudentSubjects extends Subject{
+public class StudentSubjects{
     private String studentName;
     private String studentID;
-    private ArrayList<Subject> studentSubjects = new ArrayList();
+    private ArrayList<String> studentSubjects = new ArrayList();
 
-    public StudentSubjects(String nameSubject, String idSubject, String status, String credit,
-                           String level, ArrayList<String> beforeThisSubject, String studentName,
-                           String studentID, ArrayList<Subject> studentSubjects) {
-        super(nameSubject, idSubject, status, credit, level, beforeThisSubject);
+    public StudentSubjects(String studentName, String studentID, ArrayList<String> studentSubjects) {
         this.studentName = studentName;
         this.studentID = studentID;
         this.studentSubjects = studentSubjects;
@@ -24,7 +21,7 @@ public class StudentSubjects extends Subject{
         return studentID;
     }
 
-    public ArrayList<Subject> getStudentSubjects() {
+    public ArrayList<String> getStudentSubjects() {
         return studentSubjects;
     }
 
@@ -36,7 +33,13 @@ public class StudentSubjects extends Subject{
         this.studentID = studentID;
     }
 
-    public void setStudentSubjects(ArrayList<Subject> studentSubjects) {
+    public void setStudentSubjects(ArrayList<String> studentSubjects) {
         this.studentSubjects = studentSubjects;
+    }
+
+    @Override
+    public String toString() {
+        String sub = getStudentSubjects().toString();
+        return sub;
     }
 }

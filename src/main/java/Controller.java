@@ -5,14 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 public class Controller {
@@ -21,9 +18,10 @@ public class Controller {
     @FXML public Button submitButton;
     @FXML public TextField name;
     @FXML public TextField id;
-    @FXML public Button next;
+    @FXML public Button saveNameID;
+    @FXML public TextArea stuSub;
 
-    private ArrayList<StudentSubjects> studentSubjects;
+    private StudentSubjects studentSubjects;
 
     public void initialize() {
         choiceBox.getItems().add("YEAR 1");
@@ -70,18 +68,19 @@ public class Controller {
 
     }
 
-    @FXML public void handleOnAction(ActionEvent actionEvent) throws IOException {
-        name.setPromptText("Enter your name.");
-        id.setPromptText("Enter your id.");
+    @FXML public void handleOnAction(ActionEvent actionEvent) {
         String nameStu = name.getText();
         String IDStu = id.getId();
 
+        studentSubjects = new StudentSubjects(nameStu, IDStu, null);
 
-        Stage stage = (Stage) next.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("SelectSubject.fxml"));
-        stage.setTitle("Regis");
-        stage.setScene(new Scene(root, 600, 450));
-        stage.show();
+        name.setText("");
+        id.setText("");
+
+    }
+
+    @FXML public void setSubjectArea(MouseEvent mouseEvent) {
+        stuSub.setText(studentSubjects.toString());
     }
 
 
