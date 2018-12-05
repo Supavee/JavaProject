@@ -1,3 +1,6 @@
+import Program.FileJSONReader;
+import Program.StudentSubjects;
+import Program.Subject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,14 +11,54 @@ import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class checkYear4Controller {
     @FXML private Button back;
-    @FXML private CheckBox calculus1;
-    @FXML private CheckBox FunPro;
-    @FXML private CheckBox IntroCom;
-    @FXML private CheckBox Digital;
-    @FXML private CheckBox Knowledge;
+    @FXML private CheckBox coOpEdu;
+    @FXML private CheckBox csProject;
+
+    private FileJSONReader fileJSONReader;
+    private StudentSubjects studentSubjects;
+
+    private ArrayList<String> checkSubjectY3 = new ArrayList<>();
+    private ArrayList<String> idSubjects = new ArrayList<>();
+    private ArrayList<ArrayList<String>> subjectsHavetoPass = new ArrayList<>();
+    private ArrayList<String> status = new ArrayList<>();
+    private ArrayList<String> finalSub = new ArrayList<>();
+
+    private ArrayList<String> checkStatus = new ArrayList<>();
+
+    private String coOp,csPro ;
+
+    public void initialize() {
+        fileJSONReader = FileJSONReader.getInstance();
+        for (Subject sub : fileJSONReader.readFileJSON()) {
+            idSubjects.add(sub.getIdSubject());
+            subjectsHavetoPass.add(sub.getBeforeThisSubject());
+            status.add(sub.getStatus());
+        }
+        System.out.println(subjectsHavetoPass);
+        System.out.println(status);
+    }
+
+    public void checkYear1() {
+        if (coOpEdu.isSelected()) {
+            coOp = "Operating Systems";
+        } else if (!coOpEdu.isSelected()) {
+            coOp = "";
+        }
+        if (csProject.isSelected()) {
+            csPro = "System Analysis & Design";
+        } else if (!csProject.isSelected()) {
+            csPro = "";
+        }
+
+        checkSubjectY3.add(coOp);
+        checkSubjectY3.add(csPro);
+    }
+
+
 
 
 
