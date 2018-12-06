@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -78,11 +77,11 @@ public class Controller {
     }
 
     @FXML public void handleOnAction(ActionEvent actionEvent) {
-        String nameStu = name.getText();
-        String IDStu = id.getId();
+//        String nameStu = name.getText();
+//        String IDStu = id.getId();
         studentSubjects = StudentSubjects.getInstance();
-        studentSubjects.setStudentID(IDStu);
-        studentSubjects.setStudentName(nameStu);
+//        studentSubjects.setStudentID(IDStu);
+//        studentSubjects.setStudentName(nameStu);
         studentSubjects.setStudentSubjects(new ArrayList<String>());
 //        name.setText("");
 //        id.setText("");

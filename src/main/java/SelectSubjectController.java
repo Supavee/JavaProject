@@ -77,7 +77,7 @@ public class SelectSubjectController {
         allSubjects = fileJSONReader.readFileJSON();
         for (Subject sub : allSubjects) {
             beforeThisSubject.add(sub.getBeforeThisSubject());
-            studentSubject.add("");
+//            studentSubject.add("");
         }
 
 //        for(int i = 0; i < allSubjects.size(); i++){
