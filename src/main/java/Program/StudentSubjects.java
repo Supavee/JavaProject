@@ -42,7 +42,7 @@ public class StudentSubjects{
 
     @Override
     public String toString() {
-        String sub = getStudentSubjects().toString() + "\n";
+        String sub = getStudentName() + " (" + getStudentID() + ") has sign in.";
         return sub;
     }
 }

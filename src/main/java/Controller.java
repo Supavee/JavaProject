@@ -7,8 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 public class Controller {
@@ -18,11 +18,13 @@ public class Controller {
     @FXML public TextField name;
     @FXML public TextField id;
     @FXML public Button saveNameID;
-    @FXML public TextArea stuSub;
+    @FXML public Label stuSub;
     @FXML public Button register;
     private StudentSubjects studentSubjects;
 
-
+    public Controller(){
+        studentSubjects = StudentSubjects.getInstance();
+    }
     public void initialize() {
         choiceBox.getItems().add("YEAR 1");
         choiceBox.getItems().add("YEAR 2");
@@ -69,31 +71,49 @@ public class Controller {
     }
 
     @FXML public void changetoSelectSubject() throws IOException {
-        Stage stage = (Stage) register.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("SelectSubject.fxml"));
-        stage.setTitle("Regis");
-        stage.setScene(new Scene(root,950,750));
-        stage.show();
+        if (studentSubjects.getStudentName() == null || studentSubjects.getStudentID() == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("You have to sign in first!");
+
+            alert.showAndWait();
+        } else {
+            Stage stage = (Stage) register.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("SelectSubject.fxml"));
+            stage.setTitle("Regis");
+            stage.setScene(new Scene(root, 950, 750));
+            stage.show();
+        }
     }
 
-    @FXML public void handleOnAction(ActionEvent actionEvent) {
-//        String nameStu = name.getText();
-//        String IDStu = id.getId();
-        studentSubjects = StudentSubjects.getInstance();
-//        studentSubjects.setStudentID(IDStu);
-//        studentSubjects.setStudentName(nameStu);
-        studentSubjects.setStudentSubjects(new ArrayList<String>());
-//        name.setText("");
-//        id.setText("");
-//        stuSub.setText(studentSubjects.toString());
+    @FXML public void handleOnAction(ActionEvent actionEvent) throws IOException {
+        String nameStu = name.getText();
+        String IDStu = id.getText();
+
+        if (nameStu.equals("") || IDStu.equals("")) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("You must enter the information first!");
+
+            alert.showAndWait();
+        } else {
+            studentSubjects.setStudentName(nameStu);
+            studentSubjects.setStudentID(IDStu);
+//            studentSubjects.setStudentSubjects(new ArrayList<String>());
+            name.setText("");
+            id.setText("");
+            stuSub.setText(studentSubjects.toString());
+        }
     }
 
 
-    public StudentSubjects getStudentSubjects() {
-        return studentSubjects;
-    }
-
-    public void setStudentSubjects(StudentSubjects studentSubjects) {
-        this.studentSubjects = studentSubjects;
-    }
+//    public StudentSubjects getStudentSubjects() {
+//        return studentSubjects;
+//    }
+//
+//    public void setStudentSubjects(StudentSubjects studentSubjects) {
+//        this.studentSubjects = studentSubjects;
+//    }
 }

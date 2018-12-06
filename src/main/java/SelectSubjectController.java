@@ -322,55 +322,97 @@ public class SelectSubjectController {
             }
         }
         System.out.println(studentSubject);
+
+//        calculus1;
+//        FunPro;
+//        IntroCom;
+//        Digital;
+//        Knowledge;
+//
+//        calculus2;
+//        comPro;
+//        Funcom;
+//
+//        basicLinear;
+//        software;
+//        dataStruct;
+//        statistic;
+//        database;
+//        assembly;
+//        algorithm;
+//
+//        systemAnalysis;
+//        operating;
+//        intellectual;
+//        seminar;
+//
+//        inforSystem;
+//        automata;
+//        compliertech;
+//        prinInCS ;
+//        coOpEduPre ;
+//
+//        coOpEdu;
+//        csProject;
     }
 
     public void checkPass() {
+        int count = 0;
         for (String s : studentSubject) {
-            for (Subject subject : allSubjects) {
-                if (subject.getNameSubject().equals(s)){
-                    if (subject.getBeforeThisSubject().isEmpty()){
-                        subject.setStatus(true);
-                    }
-                    else {
-                        int beforeSub = subject.getBeforeThisSubject().size();
-                        for (String s1 : subject.getBeforeThisSubject()) {
-                            for (Subject allSubject : allSubjects) {
-                                if (allSubject.getNameSubject().equals(s1)){
-                                    if (allSubject.getStatus()){
-                                        beforeSub--;
+            if (!s.isEmpty()){
+                for (Subject subject : allSubjects) {
+                    if (subject.getNameSubject().equals(s)){
+
+                        if (subject.getBeforeThisSubject().isEmpty()){
+                            subject.setStatus(true);
+                        }
+                        else {
+                            int beforeSub = subject.getBeforeThisSubject().size();
+                            for (String s1 : subject.getBeforeThisSubject()) {
+                                for (Subject allSubject : allSubjects) {
+                                    if (allSubject.getNameSubject().equals(s1)){
+                                        if (allSubject.getStatus()){
+                                            beforeSub--;
+                                        }
                                     }
                                 }
                             }
-                        }
-                        if (beforeSub == 0){
-                            subject.setStatus(true);
+                            if (beforeSub == 0){
+                                subject.setStatus(true);
+                            }
+                            else{
+                                count++;
+                            }
                         }
                     }
                 }
             }
         }
+        if (count!=0) {
+            Alert();
+        }
     }
-    @FXML public void save(MouseEvent mouseEvent) {
+    @FXML public void setShowSub(MouseEvent mouseEvent) {
         checkPass();
         String setText = "" ;
         for (Subject subject : allSubjects) {
-            setText += "Subject: "+ subject.getNameSubject()
-                    + "   Status: " ;
+            setText += "Subject: "+ subject.getNameSubject() +" ("+ subject.getIdSubject() +")"+ "\n"
+                    + "- Status: " ;
             if (subject.getStatus()){
-                setText+= "Pass\n";
+                setText+="Pass\n " + "\n";
             }
             else{
-                setText+="Not pass\n";
+                setText+="Not pass\n " + "\n";
             }
         }
         showSub.setText(setText);
     }
 
-    public void Alert(String sub) {
+    public void Alert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText(null);
-        alert.setContentText(sub);
+        alert.setContentText("There are some subjects that you have to pass before select subject that you would like to choose.");
 
         alert.showAndWait();
     }

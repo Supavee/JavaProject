@@ -4,7 +4,7 @@
         "idSubject": "01417111",
         "credit": "3",
         "level": "normal",
-        "BeforeThisSubject": [  ],
+        "beforeThisSubject": [  ],
         "info": "Limits and continuity, derivatives and applications, differentials and  applications, integration and applications."
     },
     {
@@ -12,7 +12,7 @@
         "idSubject": "01418114",
         "credit": "2",
         "level": "easy",
-        "BeforeThisSubject": [  ],
+        "beforeThisSubject": [  ],
         "info": "Computing, ability and performance of computer, reasoning and solving problems using logic, basic algorithms and data structures, programming language concepts, software developments and applications, professional information technology laws and ethics, Internet and World Wide Web."
 
     },
@@ -29,7 +29,7 @@
         "idSubject": "01418131",
         "credit": "3",
         "level": "easy",
-        "BeforeThisSubject": [  ],
+        "beforeThisSubject": [  ],
         "info": "Basic logic design, representation of both data and information by digital signals, coding, number representation and arithmetic, computer architecture."
     },
     {
@@ -37,7 +37,7 @@
         "idSubject": "01999111",
         "credit": "2",
         "level": "easy",
-        "BeforeThisSubject": [  ],
+        "beforeThisSubject": [  ],
         "info": "History, uniqueness and identity of Kasetsart University. Knowledge of the land for the well-being of nation. Learning from role models. Realization of being a Thai and world’s citizen. Reinforcement and development of learning skills and goal-oriented work within the context of integrity, knowledge creation and unity.History, uniqueness and identity of Kasetsart University. Knowledge of the land for the well-being of nation. Learning from role models. Realization of being a Thai and world’s citizen. Reinforcement and development of learning skills and goal-oriented work within the context of integrity, knowledge creation and unity."
     },
 
@@ -65,7 +65,7 @@
         "idSubject": "01418132",
         "credit": "4",
         "level": "normal",
-        "BeforeThisSubject": [  ],
+        "beforeThisSubject": [  ],
         "info": "Theory of discrete computing, probability and statistics, implementation and application in computer science "
 
     },
@@ -103,7 +103,7 @@
         "idSubject": "01422111",
         "credit": "3",
         "level": "easy",
-        "BeforeThisSubject": [  ],
+        "beforeThisSubject": [  ],
         "info": "Concepts of statistics, measures of relative standing, measures of center, measures of dispersion, random variables and their probability distributions, binomial distribution, Poisson distribution, normal distribution, sampling distribution, statistical inference for one and two populations, analysis of frequency data, one-way analysis of variance, simple linear regression analysis"
     },
 
@@ -161,7 +161,7 @@
         "idSubject": "01418341",
         "credit": "3",
         "level": "normal",
-        "BeforeThisSubject": [  ],
+        "beforeThisSubject": [  ],
         "info": "Professional ethics, categories of intellectual property acquisition of copyright, rights of copyright holder and author, copyright infringement and exceptions, performer’s rights, information access and rights of privacy, free software license, free documentation license, shrink wrap license, electronics transaction law, electronic signature, computer crime, case studies.  "
     },
     {
@@ -169,7 +169,7 @@
         "idSubject": "01418497",
         "credit": "1",
         "level": "normal",
-        "BeforeThisSubject": [ "Fundamental of Database Systems" ],
+        "beforeThisSubject": [ "Fundamental of Database Systems" ],
         "info": "Presentation and discussion on current interesting topics in computer science at the bachelor’s degree level.  "
     },
 
@@ -182,7 +182,7 @@
         "idSubject": "01418332",
         "credit": "3",
         "level": "hard",
-        "BeforeThisSubject": [ "Operating Systems" ],
+        "beforeThisSubject": [ "Operating Systems" ],
         "info": "Encryption techniques, authentication techniques, security administration, legal issues and ethics in computer system and communication network security.  "
     },
     {
@@ -190,7 +190,7 @@
         "idSubject": "01418333",
         "credit": "2",
         "level": "hard",
-        "BeforeThisSubject": [ "Fundamentals of Computing" ],
+        "beforeThisSubject": [ "Fundamentals of Computing" ],
         "info": "Finite state concept, acceptors, regular expressions, closure properties, sequential machine and finite state transducers, state minimization, formal language grammars, computability and Turing machines.  "
     },
     {
@@ -198,7 +198,7 @@
         "idSubject": "01418334",
         "credit": "2",
         "level": "hard",
-        "BeforeThisSubject": [ "Automata Theory" ],
+        "beforeThisSubject": [ "Automata Theory" ],
         "info": "Compilers and translators, phases of a compiler, notation and concepts for languages and grammars, lexical analysis, parse trees and derivations, ambiguity, parsing techniques, symbol table, intermediate representation, semantic analysis and code generation.  "
     },
     {
@@ -206,7 +206,7 @@
         "idSubject": "01418351",
         "credit": "3",
         "level": "hard",
-        "BeforeThisSubject": [ "Operating Systems" ],
+        "beforeThisSubject": [ "Operating Systems" ],
         "info": "-"
     },
     {
@@ -214,7 +214,7 @@
         "idSubject": "01418390",
         "credit": "1",
         "level": "normal",
-        "BeforeThisSubject": [ "System Analysis & Design" ],
+        "beforeThisSubject": [ "System Analysis & Design" ],
         "info": "On the job training as a temporary employee according to the assigned project including report and presentation.  "
     },
 
@@ -224,7 +224,7 @@
         "idSubject": "01418490",
         "credit": "6",
         "level": "normal",
-        "BeforeThisSubject": [ "Cooperative Education Preparation" ],
+        "beforeThisSubject": [ "Cooperative Education Preparation" ],
         "info": "On the job training as a temporary employee according to the assigned project including report and presentation.  "
     },
 
@@ -234,7 +234,7 @@
         "idSubject": "01418499",
         "credit": "3",
         "level": "hard",
-        "BeforeThisSubject": [  ],
+        "beforeThisSubject": [  ],
         "info": "Project of practical interest in various fields of computer science. "
     }
 ]
