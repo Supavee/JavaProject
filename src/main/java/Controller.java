@@ -101,19 +101,9 @@ public class Controller {
         } else {
             studentSubjects.setStudentName(nameStu);
             studentSubjects.setStudentID(IDStu);
-//            studentSubjects.setStudentSubjects(new ArrayList<String>());
             name.setText("");
             id.setText("");
             stuSub.setText(studentSubjects.toString());
         }
     }
-
-
-//    public StudentSubjects getStudentSubjects() {
-//        return studentSubjects;
-//    }
-//
-//    public void setStudentSubjects(StudentSubjects studentSubjects) {
-//        this.studentSubjects = studentSubjects;
-//    }
 }

@@ -17,8 +17,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class SelectSubjectController {
-    @FXML private Button back;
-
     @FXML private CheckBox calculus1;
     @FXML private CheckBox FunPro;
     @FXML private CheckBox IntroCom;
@@ -53,6 +51,8 @@ public class SelectSubjectController {
     @FXML private CheckBox csProject;
 
     @FXML private Button save;
+    @FXML private Button show;
+    @FXML private Button back;
     @FXML private TextArea showSub;
 
     private FileJSONReader fileJSONReader;
@@ -73,22 +73,15 @@ public class SelectSubjectController {
     private String coOp,csPro ;
 
     public void initialize() {
+        // read JSON file for build SelectSubjectController object
         fileJSONReader = FileJSONReader.getInstance();
         allSubjects = fileJSONReader.readFileJSON();
         for (Subject sub : allSubjects) {
             beforeThisSubject.add(sub.getBeforeThisSubject());
-//            studentSubject.add("");
         }
-
-//        for(int i = 0; i < allSubjects.size(); i++){
-//            if(allSubjects.get(i).getStatus().equals(false))
-//                allSubjects.get(i).setStatus(true);
-//            System.out.println(allSubjects.get(i).getStatus());
-//        }
-
     }
     public void checkYear1() {
-        //year 1
+        // select subject in year 1
         if (calculus1.isSelected()) {
             cal = "Calculus I";
         } else if (!calculus1.isSelected()) {
@@ -129,6 +122,7 @@ public class SelectSubjectController {
         } else if (!Funcom.isSelected()) {
             func = "";
         }
+        // add subjects that select
         checkSubjectY1.add(cal);
         checkSubjectY1.add(intro);
         checkSubjectY1.add(funp);
@@ -140,7 +134,7 @@ public class SelectSubjectController {
     }
 
     public void checkYear2() {
-        //year2
+        // select subject in year2
         if (basicLinear.isSelected()) {
             linear = "Basic Linear Algebra";
         } else if (!basicLinear.isSelected()) {
@@ -176,6 +170,7 @@ public class SelectSubjectController {
         } else if (!assembly.isSelected()) {
             assem = "";
         }
+        // add subjects that select
         checkSubjectY2.add(linear);
         checkSubjectY2.add(java);
         checkSubjectY2.add(data);
@@ -186,6 +181,7 @@ public class SelectSubjectController {
     }
 
     public void checkYear3() {
+        // select subject in year3
         if (systemAnalysis.isSelected()) {
             system = "System Analysis & Design";
         }
@@ -240,6 +236,7 @@ public class SelectSubjectController {
         else if (!coOpEduPre.isSelected()) {
             cooppre = "";
         }
+        // add subjects that select
         checkSubjectY3.add(system);
         checkSubjectY3.add(os);
         checkSubjectY3.add(intell);
@@ -252,6 +249,7 @@ public class SelectSubjectController {
     }
 
     public void checkYear4() {
+        // select subject in year4
         if (coOpEdu.isSelected()) {
             coOp = "Co-op Education";
         } else if (!coOpEdu.isSelected()) {
@@ -262,15 +260,18 @@ public class SelectSubjectController {
         } else if (!csProject.isSelected()) {
             csPro = "";
         }
+        // add subjects that select
         checkSubjectY4.add(coOp);
         checkSubjectY4.add(csPro);
     }
 
     @FXML public void saveOnAction(MouseEvent mouseEvent) {
+        // remove all subject for add new subject when click save button
         studentSubject.removeAll(checkSubjectY1);
         studentSubject.removeAll(checkSubjectY2);
         studentSubject.removeAll(checkSubjectY3);
         studentSubject.removeAll(checkSubjectY4);
+        //check the duplicate data for add to list
         if (checkSubjectY1.size()!=0) {
             for (int i = checkSubjectY1.size() - 8; i < checkSubjectY1.size(); i++) {
                 studentSubject.add(checkSubjectY1.get(i));
@@ -321,42 +322,29 @@ public class SelectSubjectController {
                 studentSubject.add(checkSubjectY4.get(i));
             }
         }
-        System.out.println(studentSubject);
 
-//        calculus1;
-//        FunPro;
-//        IntroCom;
-//        Digital;
-//        Knowledge;
-//
-//        calculus2;
-//        comPro;
-//        Funcom;
-//
-//        basicLinear;
-//        software;
-//        dataStruct;
-//        statistic;
-//        database;
-//        assembly;
-//        algorithm;
-//
-//        systemAnalysis;
-//        operating;
-//        intellectual;
-//        seminar;
-//
-//        inforSystem;
-//        automata;
-//        compliertech;
-//        prinInCS ;
-//        coOpEduPre ;
-//
-//        coOpEdu;
-//        csProject;
+        // clear selected checkbox when click saved button
+        calculus1.setSelected(false); FunPro.setSelected(false); IntroCom.setSelected(false);
+        Digital.setSelected(false); Knowledge.setSelected(false);
+
+        calculus2.setSelected(false); comPro.setSelected(false); Funcom.setSelected(false);
+
+        basicLinear.setSelected(false);software.setSelected(false);dataStruct.setSelected(false);
+        statistic.setSelected(false);
+
+        database.setSelected(false);assembly.setSelected(false);algorithm.setSelected(false);
+
+        systemAnalysis.setSelected(false);operating.setSelected(false);intellectual.setSelected(false);
+        seminar.setSelected(false);
+
+        inforSystem.setSelected(false);automata.setSelected(false);compliertech.setSelected(false);
+        prinInCS.setSelected(false);coOpEduPre.setSelected(false);
+
+        coOpEdu.setSelected(false);csProject.setSelected(false);
     }
 
     public void checkPass() {
+        // check subject that pass
         int count = 0;
         for (String s : studentSubject) {
             if (!s.isEmpty()){
@@ -393,6 +381,7 @@ public class SelectSubjectController {
         }
     }
     @FXML public void setShowSub(MouseEvent mouseEvent) {
+        // show passed and not pass subject
         checkPass();
         String setText = "" ;
         for (Subject subject : allSubjects) {
@@ -409,6 +398,7 @@ public class SelectSubjectController {
     }
 
     public void Alert() {
+        // alert when select subject can't regis
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText(null);
@@ -418,6 +408,7 @@ public class SelectSubjectController {
     }
 
     public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
+        //when click sign out button and change to home page
         Stage stage = (Stage) back.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("chooseyear.fxml"));
         stage.setTitle("Regis");

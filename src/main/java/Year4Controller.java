@@ -32,11 +32,13 @@ public class Year4Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // read JSON file
         fileJSONReader = FileJSONReader.getInstance();
         loadData();
     }
 
     private void loadData() {
+        // add subject name to list
         list.removeAll(list);
         list2.removeAll(list2);
 
@@ -53,6 +55,7 @@ public class Year4Controller implements Initializable {
             i++;
         }
 
+        // add subject list to list view and get subject information
         subjectList.getItems().addAll(list);
         subjectList.setCellFactory(param -> new ListCell<Subject>(){
             protected void updateItem(Subject item, boolean empty) {
@@ -80,6 +83,7 @@ public class Year4Controller implements Initializable {
 
     @FXML
     public void displaySelected(MouseEvent event){
+        // show subject information when click subject name
         Subject selectSubject = subjectList.getSelectionModel().getSelectedItem();
         if (selectSubject.getLevel().equals("hard")) {
             level.setStyle("-fx-border-color:black; -fx-background-color: red;");
@@ -97,6 +101,7 @@ public class Year4Controller implements Initializable {
 
     @FXML
     public void displaySelected2(MouseEvent event) {
+        // show subject information when click subject name
         Subject selectSubject2 = subjectList2.getSelectionModel().getSelectedItem();
         if (selectSubject2.getLevel().equals("hard")) {
             level.setStyle("-fx-border-color:black; -fx-background-color: red;");
@@ -113,6 +118,7 @@ public class Year4Controller implements Initializable {
     }
 
     public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
+        // back to homepage
         Stage stage = (Stage) goBack.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("chooseyear.fxml"));
         stage.setTitle("Regis");

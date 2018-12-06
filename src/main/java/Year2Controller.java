@@ -32,14 +32,17 @@ public class Year2Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // read JSON file
         fileJSONReader = FileJSONReader.getInstance();
         loadData();
 
     }
 
     private void loadData() {
+        // add subject name to list
         list.removeAll(list);
         list2.removeAll(list2);
+
         int i = 1;
         for (Subject sub : fileJSONReader.readFileJSON()) {
             if (8<i && i<=15) {
@@ -52,6 +55,8 @@ public class Year2Controller implements Initializable {
             }
             i++;
         }
+
+        // add subject list to list view and get subject information
         subjectList.getItems().addAll(list);
         subjectList.setCellFactory(param -> new ListCell<Subject>(){
             protected void updateItem(Subject item, boolean empty) {
@@ -80,6 +85,7 @@ public class Year2Controller implements Initializable {
 
     @FXML
     public void displaySelected(MouseEvent event){
+        // show subject information when click subject name
         Subject selectSubject = subjectList.getSelectionModel().getSelectedItem();
         if (selectSubject.getLevel().equals("hard")) {
             level.setStyle("-fx-border-color:black; -fx-background-color: red;");
@@ -98,6 +104,7 @@ public class Year2Controller implements Initializable {
 
     @FXML
     public void displaySelected2(MouseEvent event){
+        // show subject information when click subject name
         Subject selectSubject2 = subjectList2.getSelectionModel().getSelectedItem();
         if (selectSubject2.getLevel().equals("hard")) {
             level.setStyle("-fx-border-color:black; -fx-background-color: red;");
@@ -114,6 +121,7 @@ public class Year2Controller implements Initializable {
     }
 
     public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
+        // back to homepage
         Stage stage = (Stage) goBack.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("chooseyear.fxml"));
         stage.setTitle("Regis");
