@@ -1,6 +1,8 @@
 import Program.FileJSONReader;
-import Program.StudentSubjects;
 import Program.Subject;
+import com.itextpdf.text.*;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.pdf.PdfWriter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,8 +15,13 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class SelectSubjectController {
     @FXML private CheckBox calculus1;
@@ -53,12 +60,13 @@ public class SelectSubjectController {
     @FXML private Button save;
     @FXML private Button show;
     @FXML private Button back;
-    @FXML private TextArea showSub;
+    @FXML private TextArea showSubPass;
+    @FXML private TextArea showSubNotPass;
+    @FXML private Button getPDF;
 
     private FileJSONReader fileJSONReader;
-    private StudentSubjects studentSubjects;
 
-    private ArrayList<String> studentSubject = StudentSubjects.getInstance().getStudentSubjects();
+    private ArrayList<String> studentSubject = new ArrayList<>();
 
     private ArrayList<ArrayList<String>> beforeThisSubject = new ArrayList<>();
     private ArrayList<Subject> allSubjects = new ArrayList<>();
@@ -78,6 +86,15 @@ public class SelectSubjectController {
         allSubjects = fileJSONReader.readFileJSON();
         for (Subject sub : allSubjects) {
             beforeThisSubject.add(sub.getBeforeThisSubject());
+        }
+
+        showSubNotPass.setText("You have to select and save the data to show first.");
+        showSubPass.setText("You have to select and save the data to show first.");
+
+        try {
+            createFilePDF();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     public void checkYear1() {
@@ -161,12 +178,12 @@ public class SelectSubjectController {
             datab = "";
         }
         if (algorithm.isSelected()) {
-            algo = "Algorithms Design and Analysis";
+            algo = "Algorithms Design & Analysis";
         } else if (!algorithm.isSelected()) {
             algo = "";
         }
         if (assembly.isSelected()) {
-            assem = "Assembly Lang. and Comp. Arch.";
+            assem = "Assembly Language and Computer Architecture";
         } else if (!assembly.isSelected()) {
             assem = "";
         }
@@ -267,6 +284,8 @@ public class SelectSubjectController {
 
     @FXML public void saveOnAction(MouseEvent mouseEvent) {
         // remove all subject for add new subject when click save button
+
+        name.removeAll(check);
         studentSubject.removeAll(checkSubjectY1);
         studentSubject.removeAll(checkSubjectY2);
         studentSubject.removeAll(checkSubjectY3);
@@ -323,6 +342,10 @@ public class SelectSubjectController {
             }
         }
 
+        checkSubjectY1.removeAll(checkSubjectY1);
+        checkSubjectY2.removeAll(checkSubjectY2);
+        checkSubjectY3.removeAll(checkSubjectY3);
+        checkSubjectY4.removeAll(checkSubjectY4);
         // clear selected checkbox when click saved button
         calculus1.setSelected(false); FunPro.setSelected(false); IntroCom.setSelected(false);
         Digital.setSelected(false); Knowledge.setSelected(false);
@@ -341,11 +364,17 @@ public class SelectSubjectController {
         prinInCS.setSelected(false);coOpEduPre.setSelected(false);
 
         coOpEdu.setSelected(false);csProject.setSelected(false);
+//        name.removeAll(name);
+
     }
+
+    private HashSet name = new HashSet();
+    private HashSet check = new HashSet();
 
     public void checkPass() {
         // check subject that pass
         int count = 0;
+        System.out.println(studentSubject);
         for (String s : studentSubject) {
             if (!s.isEmpty()){
                 for (Subject subject : allSubjects) {
@@ -367,44 +396,89 @@ public class SelectSubjectController {
                             }
                             if (beforeSub == 0){
                                 subject.setStatus(true);
+                                check.add(subject.getNameSubject());
                             }
                             else{
                                 count++;
+                                name.add(subject.getNameSubject());
                             }
                         }
                     }
                 }
             }
+
         }
         if (count!=0) {
+            for (Object ch : name) {
+                studentSubject.remove(ch);
+                studentSubject.add("");
+            }
+            studentSubject.add("");
+            System.out.println(studentSubject);
             Alert();
         }
+        name.removeAll(name);
     }
-    @FXML public void setShowSub(MouseEvent mouseEvent) {
+
+    private String getPass = "";
+    @FXML public void setShowSub(MouseEvent mouseEvent) throws Exception {
         // show passed and not pass subject
+
         checkPass();
-        String setText = "" ;
+        String Pass = "", NotPass = "", pdfText = "SUBJECTS REGISTER\n\n";
         for (Subject subject : allSubjects) {
-            setText += "Subject: "+ subject.getNameSubject() +" ("+ subject.getIdSubject() +")"+ "\n"
-                    + "- Status: " ;
             if (subject.getStatus()){
-                setText+="Pass\n " + "\n";
+                Pass+= "Subject: "+ subject.getNameSubject() +" ("+ subject.getIdSubject() +")"+ "\n"
+                        + "- Credit: "+ subject.getCredit() + "\n- Status: " + "Pass\n " +"\n";
+
+                pdfText += "Subject: "+ subject.getNameSubject() +" ("+ subject.getIdSubject() +")"+ "\n"
+                        + "- Credit: "+ subject.getCredit() + "\n- Level: " + subject.getLevel() + "\n";
+
             }
             else{
-                setText+="Not pass\n " + "\n";
+                NotPass+= "Subject: "+ subject.getNameSubject() +" ("+ subject.getIdSubject() +")"+ "\n"
+                        + "- Status: " + "Not pass\n";
+                for (String s : subject.getBeforeThisSubject()) {
+                    if (!s.isEmpty()) {
+                        NotPass += "- Have to pass "+ s +" before.";
+                    }
+                    NotPass += "\n";
+                }
+                NotPass += "\n";
             }
         }
-        showSub.setText(setText);
+
+        if (Pass.equals("")) {
+            showSubPass.setText("You don't pass any subjects.");
+        } else {
+            showSubPass.setText(Pass);
+            getPass = pdfText;
+            createFilePDF();
+        }
+
+        if (NotPass.equals("")) {
+            showSubNotPass.setText("You have passed all the subjects.");
+        } else {
+            showSubNotPass.setText(NotPass);
+        }
+
     }
 
     public void Alert() {
-        // alert when select subject can't regis
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText("There are some subjects that you have to pass before select subject that you would like to choose.");
+        for (Object nameSub : name) {
+            for (Subject s : allSubjects) {
+                if (s.getNameSubject().equals(nameSub)) {
+                    // alert when select subject can't regis
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Information Dialog");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Can not save \"" + nameSub + "\"\nYou have to pass " + s.getBeforeThisSubject());
+                    alert.showAndWait();
+                }
+            }
+        }
 
-        alert.showAndWait();
+
     }
 
     public void changetoPageChoose (ActionEvent actionEvent) throws IOException {
@@ -417,4 +491,37 @@ public class SelectSubjectController {
     }
 
 
+    public void createFilePDF() throws Exception {
+        Document document = new Document();
+        if (getPass.equals("")) {
+            getPass = "No information\nYou must register by selecting the subjects that have passed before."+
+                    "\nWarning! Don't forget to save register.";
+        }
+
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("ExportRegister.pdf"));
+            document.open();
+            Font font = FontFactory.getFont(FontFactory.TIMES_BOLD, 16, BaseColor.BLACK);
+
+            Paragraph paragraph = new Paragraph(getPass, font);
+            document.add(paragraph);
+
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(getPass);
+
+        document.close();
+    }
+
+    public void openPDF(ActionEvent event) {
+        try {
+            Desktop.getDesktop().open(new File("ExportRegister.pdf"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

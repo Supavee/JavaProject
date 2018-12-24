@@ -20,17 +20,17 @@
             <Image url="@selectsub.jpg" />
          </image>
       </ImageView>
-      <GridPane layoutX="22.0" layoutY="42.0" prefHeight="372.0" prefWidth="931.0">
+      <GridPane layoutX="22.0" layoutY="58.0" prefHeight="308.0" prefWidth="965.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0" />
+          <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="200.0" />
+          <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="150.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="115.0" minHeight="2.0" prefHeight="42.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="244.0" minHeight="10.0" prefHeight="191.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="204.0" minHeight="10.0" prefHeight="203.0" vgrow="SOMETIMES" />
+          <RowConstraints fillHeight="false" maxHeight="115.0" minHeight="2.0" prefHeight="42.0" vgrow="SOMETIMES" />
+          <RowConstraints fillHeight="false" maxHeight="150.0" minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+          <RowConstraints fillHeight="false" maxHeight="200.0" minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="YEAR 1">
@@ -45,8 +45,11 @@
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Label>
-            <Label text="YEAR 4" GridPane.columnIndex="3" />
-            <VBox prefHeight="145.0" prefWidth="280.0" GridPane.rowIndex="1">
+            <Label text="YEAR 4" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <VBox fillWidth="false" prefHeight="145.0" prefWidth="280.0" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 1" />
                   <CheckBox fx:id="calculus1" mnemonicParsing="false" onAction="#checkYear1" prefHeight="23.0" prefWidth="153.0" text="Calculus I" />
@@ -106,7 +109,7 @@
                   <CheckBox fx:id="coOpEduPre" mnemonicParsing="false" onAction="#checkYear3" prefHeight="23.0" prefWidth="215.0" text="Co-op. Edu Preparation" />
                </children>
             </VBox>
-            <VBox prefHeight="165.0" prefWidth="171.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <VBox fillWidth="false" prefHeight="176.0" prefWidth="222.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
                   <Label prefHeight="23.0" prefWidth="113.0" text="Semester 2" />
                   <CheckBox fx:id="csProject" mnemonicParsing="false" onAction="#checkYear4" prefHeight="23.0" prefWidth="139.0" text="CS Project" />
@@ -118,14 +121,21 @@
          <font>
             <Font name="System Bold" size="24.0" />
          </font></Label>
-      <Button fx:id="save" layoutX="606.0" layoutY="533.0" mnemonicParsing="false" onMouseClicked="#saveOnAction" prefHeight="25.0" prefWidth="105.0" text="Saved" />
-      <Button fx:id="back" layoutX="606.0" layoutY="635.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="25.0" prefWidth="105.0" text="Sign out" />
-      <TextArea fx:id="showSub" editable="false" layoutX="30.0" layoutY="391.0" onMouseClicked="#setShowSub" prefHeight="283.0" prefWidth="557.0" wrapText="true" />
-      <Button fx:id="show" layoutX="606.0" layoutY="583.0" mnemonicParsing="false" onMouseClicked="#setShowSub" prefHeight="31.0" prefWidth="105.0" text="Show" />
-      <Label layoutX="30.0" layoutY="711.0" prefHeight="31.0" prefWidth="850.0" text="หมายเหตุ : ถ้าเลือกวิชาที่มีตัววิชาก่อนหน้าที่ต้องผ่านแล้วยังไม่ได้เรียน status จะยังขึ้น NotPass แม้ว่าจะกดเลือกวิชานั้นแล้ว">
+      <Button fx:id="back" layoutX="768.0" layoutY="699.0" mnemonicParsing="false" onAction="#changetoPageChoose" prefHeight="31.0" prefWidth="113.0" text="Back to home" />
+      <TextArea fx:id="showSubPass" editable="false" layoutX="37.0" layoutY="442.0" onMouseClicked="#setShowSub" prefHeight="288.0" prefWidth="315.0" wrapText="true" />
+      <Button fx:id="show" layoutX="726.0" layoutY="539.0" mnemonicParsing="false" onMouseClicked="#setShowSub" prefHeight="31.0" prefWidth="198.0" text="Save and Show Register" />
+      <TextArea fx:id="showSubNotPass" editable="false" layoutX="391.0" layoutY="442.0" prefHeight="288.0" prefWidth="315.0" wrapText="true" />
+      <Label layoutX="37.0" layoutY="406.0" text="Subjects that pass">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
+      <Label layoutX="520.0" layoutY="406.0" text="Subjects that not pass">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="save" layoutX="794.0" layoutY="369.0" mnemonicParsing="false" onMouseClicked="#saveOnAction" prefHeight="31.0" prefWidth="123.0" text="Save selected" />
+      <Button fx:id="getPDF" layoutX="774.0" layoutY="586.0" mnemonicParsing="false" onAction="#openPDF" text="Get File PDF" />
    </children>
 </AnchorPane>
